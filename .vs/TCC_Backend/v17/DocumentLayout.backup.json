@@ -1,0 +1,241 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\GitHub\\TCC\\TCC-BETA V3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|e:\\github\\tcc\\tcc-beta v3\\tcc-beta v3\\infrastructure\\context\\configurations\\auditoriaentitycofigurations\\auditoriaentityconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|solutionrelative:tcc-beta v3\\infrastructure\\context\\configurations\\auditoriaentitycofigurations\\auditoriaentityconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|e:\\github\\tcc\\tcc-beta v3\\tcc-beta v3\\domain\\models\\auditorias\\auditoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|solutionrelative:tcc-beta v3\\domain\\models\\auditorias\\auditoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|e:\\github\\tcc\\tcc-beta v3\\tcc-beta v3\\infrastructure\\context\\configurations\\historicoentityconfigurations\\historicoentityconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|solutionrelative:tcc-beta v3\\infrastructure\\context\\configurations\\historicoentityconfigurations\\historicoentityconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|e:\\github\\tcc\\tcc-beta v3\\tcc-beta v3\\domain\\models\\avaliacoes\\avaliacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|solutionrelative:tcc-beta v3\\domain\\models\\avaliacoes\\avaliacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|e:\\github\\tcc\\tcc-beta v3\\tcc-beta v3\\infrastructure\\context\\appdbcontext\\tccbackendcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|solutionrelative:tcc-beta v3\\infrastructure\\context\\appdbcontext\\tccbackendcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|e:\\github\\tcc\\tcc-beta v3\\tcc-beta v3\\domain\\models\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|solutionrelative:tcc-beta v3\\domain\\models\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|e:\\github\\tcc\\tcc-beta v3\\tcc-beta v3\\infrastructure\\context\\configurations\\usuarioservicosavaliacaoentityconfigurations\\usuarioservicoavaliacaoentityconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|solutionrelative:tcc-beta v3\\infrastructure\\context\\configurations\\usuarioservicosavaliacaoentityconfigurations\\usuarioservicoavaliacaoentityconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|e:\\github\\tcc\\tcc-beta v3\\tcc-beta v3\\infrastructure\\context\\configurations\\usuarioentityconfigurations\\usuarioentityconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|solutionrelative:tcc-beta v3\\infrastructure\\context\\configurations\\usuarioentityconfigurations\\usuarioentityconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|e:\\github\\tcc\\tcc-beta v3\\tcc-beta v3\\domain\\models\\usuarioservicosavaliacao\\usuarioservicoavaliacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|solutionrelative:tcc-beta v3\\domain\\models\\usuarioservicosavaliacao\\usuarioservicoavaliacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|e:\\github\\tcc\\tcc-beta v3\\tcc-beta v3\\domain\\models\\historicos\\historico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|solutionrelative:tcc-beta v3\\domain\\models\\historicos\\historico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|e:\\github\\tcc\\tcc-beta v3\\tcc-beta v3\\domain\\enums\\categorariaavalicao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|solutionrelative:tcc-beta v3\\domain\\enums\\categorariaavalicao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|e:\\github\\tcc\\tcc-beta v3\\tcc-beta v3\\domain\\models\\usuarios\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|solutionrelative:tcc-beta v3\\domain\\models\\usuarios\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|e:\\github\\tcc\\tcc-beta v3\\tcc-beta v3\\domain\\models\\servicos\\servico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{862F741B-9A34-4A52-83E9-2CFFD453F7B0}|TCC-BETA V3\\TCC_Backend.csproj|solutionrelative:tcc-beta v3\\domain\\models\\servicos\\servico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuditoriaEntityConfiguration.cs",
+              "DocumentMoniker": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Infrastructure\\Context\\Configurations\\AuditoriaEntityCofigurations\\AuditoriaEntityConfiguration.cs",
+              "RelativeDocumentMoniker": "TCC-BETA V3\\Infrastructure\\Context\\Configurations\\AuditoriaEntityCofigurations\\AuditoriaEntityConfiguration.cs",
+              "ToolTip": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Infrastructure\\Context\\Configurations\\AuditoriaEntityCofigurations\\AuditoriaEntityConfiguration.cs",
+              "RelativeToolTip": "TCC-BETA V3\\Infrastructure\\Context\\Configurations\\AuditoriaEntityCofigurations\\AuditoriaEntityConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T17:06:08.887Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Auditoria.cs",
+              "DocumentMoniker": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Domain\\Models\\Auditorias\\Auditoria.cs",
+              "RelativeDocumentMoniker": "TCC-BETA V3\\Domain\\Models\\Auditorias\\Auditoria.cs",
+              "ToolTip": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Domain\\Models\\Auditorias\\Auditoria.cs",
+              "RelativeToolTip": "TCC-BETA V3\\Domain\\Models\\Auditorias\\Auditoria.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T17:00:06.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HistoricoEntityConfiguration.cs",
+              "DocumentMoniker": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Infrastructure\\Context\\Configurations\\HistoricoEntityConfigurations\\HistoricoEntityConfiguration.cs",
+              "RelativeDocumentMoniker": "TCC-BETA V3\\Infrastructure\\Context\\Configurations\\HistoricoEntityConfigurations\\HistoricoEntityConfiguration.cs",
+              "ToolTip": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Infrastructure\\Context\\Configurations\\HistoricoEntityConfigurations\\HistoricoEntityConfiguration.cs",
+              "RelativeToolTip": "TCC-BETA V3\\Infrastructure\\Context\\Configurations\\HistoricoEntityConfigurations\\HistoricoEntityConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T16:52:51.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UsuarioServicoAvaliacaoEntityConfiguration.cs",
+              "DocumentMoniker": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Infrastructure\\Context\\Configurations\\UsuarioServicosAvaliacaoEntityConfigurations\\UsuarioServicoAvaliacaoEntityConfiguration.cs",
+              "RelativeDocumentMoniker": "TCC-BETA V3\\Infrastructure\\Context\\Configurations\\UsuarioServicosAvaliacaoEntityConfigurations\\UsuarioServicoAvaliacaoEntityConfiguration.cs",
+              "ToolTip": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Infrastructure\\Context\\Configurations\\UsuarioServicosAvaliacaoEntityConfigurations\\UsuarioServicoAvaliacaoEntityConfiguration.cs",
+              "RelativeToolTip": "TCC-BETA V3\\Infrastructure\\Context\\Configurations\\UsuarioServicosAvaliacaoEntityConfigurations\\UsuarioServicoAvaliacaoEntityConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T16:35:31.219Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UsuarioServicoAvaliacao.cs",
+              "DocumentMoniker": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Domain\\Models\\UsuarioServicosAvaliacao\\UsuarioServicoAvaliacao.cs",
+              "RelativeDocumentMoniker": "TCC-BETA V3\\Domain\\Models\\UsuarioServicosAvaliacao\\UsuarioServicoAvaliacao.cs",
+              "ToolTip": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Domain\\Models\\UsuarioServicosAvaliacao\\UsuarioServicoAvaliacao.cs",
+              "RelativeToolTip": "TCC-BETA V3\\Domain\\Models\\UsuarioServicosAvaliacao\\UsuarioServicoAvaliacao.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T16:31:48.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CategorariaAvalicao.cs",
+              "DocumentMoniker": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Domain\\Enums\\CategorariaAvalicao.cs",
+              "RelativeDocumentMoniker": "TCC-BETA V3\\Domain\\Enums\\CategorariaAvalicao.cs",
+              "ToolTip": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Domain\\Enums\\CategorariaAvalicao.cs",
+              "RelativeToolTip": "TCC-BETA V3\\Domain\\Enums\\CategorariaAvalicao.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T16:20:11.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UsuarioEntityConfiguration.cs",
+              "DocumentMoniker": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Infrastructure\\Context\\Configurations\\UsuarioEntityConfigurations\\UsuarioEntityConfiguration.cs",
+              "RelativeDocumentMoniker": "TCC-BETA V3\\Infrastructure\\Context\\Configurations\\UsuarioEntityConfigurations\\UsuarioEntityConfiguration.cs",
+              "ToolTip": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Infrastructure\\Context\\Configurations\\UsuarioEntityConfigurations\\UsuarioEntityConfiguration.cs",
+              "RelativeToolTip": "TCC-BETA V3\\Infrastructure\\Context\\Configurations\\UsuarioEntityConfigurations\\UsuarioEntityConfiguration.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T14:19:10.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TccBackendContext.cs",
+              "DocumentMoniker": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Infrastructure\\Context\\AppDbContext\\TccBackendContext.cs",
+              "RelativeDocumentMoniker": "TCC-BETA V3\\Infrastructure\\Context\\AppDbContext\\TccBackendContext.cs",
+              "ToolTip": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Infrastructure\\Context\\AppDbContext\\TccBackendContext.cs",
+              "RelativeToolTip": "TCC-BETA V3\\Infrastructure\\Context\\AppDbContext\\TccBackendContext.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAADgvyAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T13:00:35.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Historico.cs",
+              "DocumentMoniker": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Domain\\Models\\Historicos\\Historico.cs",
+              "RelativeDocumentMoniker": "TCC-BETA V3\\Domain\\Models\\Historicos\\Historico.cs",
+              "ToolTip": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Domain\\Models\\Historicos\\Historico.cs",
+              "RelativeToolTip": "TCC-BETA V3\\Domain\\Models\\Historicos\\Historico.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T12:56:15.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Avaliacao.cs",
+              "DocumentMoniker": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Domain\\Models\\Avaliacoes\\Avaliacao.cs",
+              "RelativeDocumentMoniker": "TCC-BETA V3\\Domain\\Models\\Avaliacoes\\Avaliacao.cs",
+              "ToolTip": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Domain\\Models\\Avaliacoes\\Avaliacao.cs",
+              "RelativeToolTip": "TCC-BETA V3\\Domain\\Models\\Avaliacoes\\Avaliacao.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T12:43:03.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Domain\\Models\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "TCC-BETA V3\\Domain\\Models\\BaseEntity.cs",
+              "ToolTip": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Domain\\Models\\BaseEntity.cs",
+              "RelativeToolTip": "TCC-BETA V3\\Domain\\Models\\BaseEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T12:34:45.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Servico.cs",
+              "DocumentMoniker": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Domain\\Models\\Servicos\\Servico.cs",
+              "RelativeDocumentMoniker": "TCC-BETA V3\\Domain\\Models\\Servicos\\Servico.cs",
+              "ToolTip": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Domain\\Models\\Servicos\\Servico.cs",
+              "RelativeToolTip": "TCC-BETA V3\\Domain\\Models\\Servicos\\Servico.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T12:30:53.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Domain\\Models\\Usuarios\\Usuario.cs",
+              "RelativeDocumentMoniker": "TCC-BETA V3\\Domain\\Models\\Usuarios\\Usuario.cs",
+              "ToolTip": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\Domain\\Models\\Usuarios\\Usuario.cs",
+              "RelativeToolTip": "TCC-BETA V3\\Domain\\Models\\Usuarios\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T12:23:51.014Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
