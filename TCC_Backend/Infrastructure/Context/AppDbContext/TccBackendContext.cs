@@ -23,8 +23,6 @@ namespace TCC_Backend.Infrastructure.Context.AppDbContext
 
         public DbSet<Avaliacao> Avaliacoes { get; set; }
 
-        public DbSet<BaseEntity> BaseEntitys { get; set; }
-
         public DbSet<Historico> Historicos { get; set; }
 
         public DbSet<Servico> Servicos { get; set; }
@@ -36,7 +34,6 @@ namespace TCC_Backend.Infrastructure.Context.AppDbContext
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new AvalicacaoEnityConfiguration());
-            modelBuilder.ApplyConfiguration(new BaseEntityConfiguration());
             modelBuilder.ApplyConfiguration(new HistoricoEntityConfiguration());
             modelBuilder.ApplyConfiguration(new ServicoEntityConfiguration());
             modelBuilder.ApplyConfiguration(new UsuarioEntityConfiguration());
@@ -47,23 +44,25 @@ namespace TCC_Backend.Infrastructure.Context.AppDbContext
 
         public override int SaveChanges()
         {
+            return SaveChangesAsync().GetAwaiter().GetResult();
+        }
+
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
             var auditorias = new List<Auditoria>();
 
             foreach (var entry in ChangeTracker.Entries<BaseEntity>())
             {
                 entry.Entity.AtualizarDataDeEstados(entry.State);
                 var id = entry.OriginalValues["Id"]!.ToString();
-                var usuario = "Sistema";
+                var usuario = "Sistema"; // Ainda precisa ser implementado corretamente.
 
                 switch (entry.State)
                 {
                     case EntityState.Added:
-
-                        var entidadeAdded = entry.Entity.GetType().Name;
-
                         auditorias.Add(new Auditoria
                         {
-                            Entidade = entidadeAdded,
+                            Entidade = entry.Entity.GetType().Name,
                             ChavePrimaria = id!,
                             Acao = "INSERT",
                             Usuario = usuario,
@@ -71,21 +70,16 @@ namespace TCC_Backend.Infrastructure.Context.AppDbContext
                         break;
 
                     case EntityState.Modified:
-
-                        entry.Entity.AtualizarDataDeEstados(entry.State);
-
-                        var entidadeModified = entry.Entity.GetType().Name;
-
                         foreach (var prop in entry.OriginalValues.Properties)
                         {
                             var original = entry.OriginalValues[prop]?.ToString();
                             var atual = entry.CurrentValues[prop]?.ToString();
 
-                            if (original != atual) // Apenas se houver mudança
+                            if (original != atual)
                             {
                                 auditorias.Add(new Auditoria
                                 {
-                                    Entidade = entidadeModified,
+                                    Entidade = entry.Entity.GetType().Name,
                                     ChavePrimaria = id!,
                                     Acao = "UPDATE",
                                     Propriedade = prop.Name,
@@ -98,12 +92,9 @@ namespace TCC_Backend.Infrastructure.Context.AppDbContext
                         break;
 
                     case EntityState.Deleted:
-
-                        var entidadeDeleted = entry.Entity.GetType().Name;
-  
                         auditorias.Add(new Auditoria
                         {
-                            Entidade = entidadeDeleted,
+                            Entidade = entry.Entity.GetType().Name,
                             ChavePrimaria = id!,
                             Acao = "DELETE",
                             Usuario = usuario,
@@ -114,11 +105,10 @@ namespace TCC_Backend.Infrastructure.Context.AppDbContext
 
             if (auditorias.Any())
             {
-                this.Set<Auditoria>().AddRange(auditorias);
+                await this.Set<Auditoria>().AddRangeAsync(auditorias, cancellationToken);
             }
 
-            return base.SaveChanges();
+            return await base.SaveChangesAsync(cancellationToken);
         }
-
     }
 }

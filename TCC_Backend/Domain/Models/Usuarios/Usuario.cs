@@ -1,4 +1,6 @@
-﻿namespace TCC_Backend.Domain.Models.Usuarios
+﻿using TCC_Backend.Domain.Models.UsuarioServicosAvaliacao;
+
+namespace TCC_Backend.Domain.Models.Usuarios
 {
     public class Usuario : BaseEntity
     {
@@ -20,5 +22,7 @@
         public string TituloEleitor { get; private set; }
 
         public string Telefone { get; private set; }
+
+        public virtual ICollection<UsuarioServicoAvaliacao>? UsuarioServicoAvaliacoes { get; set; }
     }
 }

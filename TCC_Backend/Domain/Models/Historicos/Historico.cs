@@ -1,7 +1,13 @@
-﻿namespace TCC_Backend.Domain.Models.Historicos
+﻿using TCC_Backend.Domain.Models.Servicos;
+
+namespace TCC_Backend.Domain.Models.Historicos
 {
     public class Historico : BaseEntity
     {
+        public Historico()
+        {
+        }
+
         public Historico(Guid idServico,
                          decimal mediaCategoria1,
                          decimal mediaCategoria2,
@@ -36,5 +42,25 @@
         public int NumeroDeAvaliacoes { get; private set; }
 
         public DateTime? DataReferencia { get; private set; }
+
+
+        public virtual Servico? Servico { get; set; }
+
+        public void Update(decimal mediaCategoria1,
+                               decimal mediaCategoria2,
+                               decimal mediaCategoria3,
+                               decimal mediaCategoria4,
+                               decimal mediaCategoria5,
+                               int numeroDeAvaliacoes,
+                               DateTime? dataReferencia)
+        {
+            MediaCategoria1 = mediaCategoria1;
+            MediaCategoria2 = mediaCategoria2;
+            MediaCategoria3 = mediaCategoria3;
+            MediaCategoria4 = mediaCategoria4;
+            MediaCategoria5 = mediaCategoria5;
+            NumeroDeAvaliacoes = numeroDeAvaliacoes;
+            DataReferencia = dataReferencia;
+        }
     }
 }

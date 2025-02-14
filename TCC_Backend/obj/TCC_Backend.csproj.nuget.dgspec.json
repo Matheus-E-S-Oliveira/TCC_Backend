@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\TCC_Backend.csproj": {}
+    "E:\\GitHub\\TCC\\TCC_Backend\\TCC_Backend\\TCC_Backend.csproj": {}
   },
   "projects": {
-    "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\TCC_Backend.csproj": {
+    "E:\\GitHub\\TCC\\TCC_Backend\\TCC_Backend\\TCC_Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\TCC_Backend.csproj",
+        "projectUniqueName": "E:\\GitHub\\TCC\\TCC_Backend\\TCC_Backend\\TCC_Backend.csproj",
         "projectName": "TCC_Backend",
-        "projectPath": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\TCC_Backend.csproj",
+        "projectPath": "E:\\GitHub\\TCC\\TCC_Backend\\TCC_Backend\\TCC_Backend.csproj",
         "packagesPath": "C:\\Users\\marhe\\.nuget\\packages\\",
-        "outputPath": "E:\\GitHub\\TCC\\TCC-BETA V3\\TCC-BETA V3\\obj\\",
+        "outputPath": "E:\\GitHub\\TCC\\TCC_Backend\\TCC_Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -64,6 +64,18 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[7.2.0, )"
             }
           },
           "imports": [

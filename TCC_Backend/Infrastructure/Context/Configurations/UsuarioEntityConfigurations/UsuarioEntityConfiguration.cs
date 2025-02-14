@@ -10,6 +10,19 @@ namespace TCC_Backend.Infrastructure.Context.Configurations.UsuarioEntityConfigu
         {
             builder.ToTable("usuario");
 
+            builder.HasKey(x => x.Id);
+
+            builder.Property(x => x.Id)
+                .ValueGeneratedOnAdd()
+                .IsRequired();
+
+            builder.Property(x => x.DataCriacao)
+                .HasDefaultValueSql("CURRENT_TIMESTAMP(6)")
+                .IsRequired();
+
+            builder.Property(x => x.DataAtualizacao)
+                .IsRequired(false);
+
             builder.Property(x => x.Nome)
                 .HasMaxLength(100)
                 .IsRequired();
@@ -29,6 +42,11 @@ namespace TCC_Backend.Infrastructure.Context.Configurations.UsuarioEntityConfigu
             builder.Property(x => x.TituloEleitor)
                 .HasMaxLength(12)
                 .IsRequired();
+
+            builder.HasMany(x => x.UsuarioServicoAvaliacoes)
+                .WithOne(x => x.Usuario)
+                .HasForeignKey(x => x.UsuarioId)
+                .OnDelete(DeleteBehavior.Restrict);
 
         }
     }

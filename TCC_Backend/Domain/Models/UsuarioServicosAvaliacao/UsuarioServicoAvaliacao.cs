@@ -1,4 +1,7 @@
-﻿namespace TCC_Backend.Domain.Models.UsuarioServicosAvaliacao
+﻿using TCC_Backend.Domain.Models.Servicos;
+using TCC_Backend.Domain.Models.Usuarios;
+
+namespace TCC_Backend.Domain.Models.UsuarioServicosAvaliacao
 {
     public class UsuarioServicoAvaliacao : BaseEntity
     {
@@ -9,10 +12,15 @@
             DataUltimaAvaliacao = dataUltimaAvaliacao;
         }
 
-        public Guid UsuarioId { get; set; }
+        public Guid UsuarioId { get; private set; }
         
-        public Guid ServicoId { get; set; }
+        public Guid ServicoId { get; private set; }
 
-        public DateTime DataUltimaAvaliacao { get; set; }
+        public DateTime DataUltimaAvaliacao { get; private set; }
+
+        
+        public virtual Usuario? Usuario { get; set; }
+
+        public virtual Servico? Servico { get; set; }
     }
 }
