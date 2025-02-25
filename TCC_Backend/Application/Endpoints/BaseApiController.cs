@@ -4,18 +4,23 @@ namespace TCC_Backend.Application.Endpoints
 {
     public class BaseApiController : ControllerBase
     {
-        protected IActionResult Success(object data)
+        protected IActionResult Success(object data, int statusCode = 200)
         {
-            return Ok(new { success = true, data });
+            return Ok(new { success = true, data, statusCode });
         }
 
-        protected IActionResult Error(string message)
+        protected IActionResult OkResponse(string message, int statusCode = 200)
         {
-            return BadRequest(new { success = false, message });
+            return StatusCode(statusCode, new { success = true, message, statusCode });
+        }
+
+        protected IActionResult Error(string message, int statusCode = 400)
+        {
+            return StatusCode(statusCode, new { success = false, message, statusCode });
         }
 
         // Método para tratar exceções
-        protected IActionResult HandleException(Exception ex)
+        protected IActionResult HandleException()
         {
             return StatusCode(500, new { success = false, message = "Ocorreu um erro no servidor" });
         }

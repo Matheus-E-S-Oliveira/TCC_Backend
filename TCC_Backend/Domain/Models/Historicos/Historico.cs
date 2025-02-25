@@ -1,4 +1,5 @@
-﻿using TCC_Backend.Domain.Models.Servicos;
+﻿using System.Text.Json.Serialization;
+using TCC_Backend.Domain.Models.Servicos;
 
 namespace TCC_Backend.Domain.Models.Historicos
 {
@@ -43,7 +44,7 @@ namespace TCC_Backend.Domain.Models.Historicos
 
         public DateTime? DataReferencia { get; private set; }
 
-
+        [JsonIgnore]
         public virtual Servico? Servico { get; set; }
 
         public void Update(decimal mediaCategoria1,

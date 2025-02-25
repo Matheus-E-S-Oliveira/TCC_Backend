@@ -2,10 +2,11 @@
 {
     public enum CategoriaAvaliacao
     {
-        QualidadeAtendimento = 1,
-        TempoEspera = 2,
-        ClarezaInformacoes = 3,
-        Infraestrutura = 4,
-        ExperienciaGeral = 5
+        SATISFACAO_USUARIO = 1,
+        QUALIDADE_ATENDIMENTO = 2,
+        CUMPRIMENTO_COMPROMISSOS_PRAZOS = 3,
+        QUANTIDADE_MANIFESTACOES_USUARIOS = 4,
+        MEDIDAS_MELHORIA_APERFEICOAMENTO = 5
     }
+
 }

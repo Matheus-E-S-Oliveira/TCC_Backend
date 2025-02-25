@@ -1,12 +1,24 @@
-﻿using TCC_Backend.Domain.Models.UsuarioServicosAvaliacao;
+﻿using System.Text.Json.Serialization;
+using TCC_Backend.Domain.Models.UsuarioServicosAvaliacao;
 
 namespace TCC_Backend.Domain.Models.Usuarios
 {
     public class Usuario : BaseEntity
     {
-        public Usuario(string nome, string email, string cpf, string tituloEleitor, string telefone)
+        public Usuario()
+        {
+            Nome = string.Empty;
+            Password = string.Empty;
+            Email = string.Empty;
+            Cpf = string.Empty;
+            TituloEleitor = string.Empty;
+            Telefone = string.Empty;
+        }
+
+        public Usuario(string nome, string password, string email, string cpf, string tituloEleitor, string telefone)
         {
             Nome = nome;
+            Password = password;
             Email = email;
             Cpf = cpf;
             TituloEleitor = tituloEleitor;
@@ -14,6 +26,8 @@ namespace TCC_Backend.Domain.Models.Usuarios
         }
 
         public string Nome { get; private set; }
+
+        public string Password { get; private set; }
 
         public string Email { get; private set; }
 
@@ -23,6 +37,7 @@ namespace TCC_Backend.Domain.Models.Usuarios
 
         public string Telefone { get; private set; }
 
+        [JsonIgnore]
         public virtual ICollection<UsuarioServicoAvaliacao>? UsuarioServicoAvaliacoes { get; set; }
     }
 }

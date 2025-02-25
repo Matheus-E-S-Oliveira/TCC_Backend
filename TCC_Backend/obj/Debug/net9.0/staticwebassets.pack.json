@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "E:\\GitHub\\TCC\\TCC_Backend\\TCC_Backend\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\TCC_Backend.bundle.scp.css",
-      "PackagePath": "staticwebassets\\TCC_Backend.egeryyi29y.bundle.scp.css"
-    },
-    {
       "Id": "E:\\GitHub\\TCC\\TCC_Backend\\TCC_Backend\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

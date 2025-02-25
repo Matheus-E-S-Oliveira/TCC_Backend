@@ -1,10 +1,10 @@
 ﻿using TCC_Backend.Application.Dtos.MediasDtos;
-using TCC_Backend.Application.Interfaces.IHistoricoService;
+using TCC_Backend.Application.Interfaces.Servicos.IHistoricoServices;
 using TCC_Backend.Domain.Enums;
 using TCC_Backend.Domain.Interfaces.IAvaliacaoRespositorys;
 using TCC_Backend.Domain.Interfaces.IHistorioRepositorys;
 using TCC_Backend.Domain.Models.Historicos;
-using TCC_Backend.Infrastructure.UnitOfWorks;
+using TCC_Backend.Domain.UnitOfWorks;
 
 namespace TCC_Backend.Application.Services.HistoricoServices
 {
@@ -63,11 +63,11 @@ namespace TCC_Backend.Application.Services.HistoricoServices
         {
             return new MediasDtos
             {
-                Categoria1 = await avaliacaoRepository.CalcularMediaCategoriaAsync(id, CategoriaAvaliacao.ExperienciaGeral, dataReferencia),
-                Categoria2 = await avaliacaoRepository.CalcularMediaCategoriaAsync(id, CategoriaAvaliacao.Infraestrutura, dataReferencia),
-                Categoria3 = await avaliacaoRepository.CalcularMediaCategoriaAsync(id, CategoriaAvaliacao.ClarezaInformacoes, dataReferencia),
-                Categoria4 = await avaliacaoRepository.CalcularMediaCategoriaAsync(id, CategoriaAvaliacao.TempoEspera, dataReferencia),
-                Categoria5 = await avaliacaoRepository.CalcularMediaCategoriaAsync(id, CategoriaAvaliacao.QualidadeAtendimento, dataReferencia)
+                Categoria1 = await avaliacaoRepository.CalcularMediaCategoriaAsync(id, CategoriaAvaliacao.SATISFACAO_USUARIO, dataReferencia),
+                Categoria2 = await avaliacaoRepository.CalcularMediaCategoriaAsync(id, CategoriaAvaliacao.QUALIDADE_ATENDIMENTO, dataReferencia),
+                Categoria3 = await avaliacaoRepository.CalcularMediaCategoriaAsync(id, CategoriaAvaliacao.CUMPRIMENTO_COMPROMISSOS_PRAZOS, dataReferencia),
+                Categoria4 = await avaliacaoRepository.CalcularMediaCategoriaAsync(id, CategoriaAvaliacao.QUANTIDADE_MANIFESTACOES_USUARIOS, dataReferencia),
+                Categoria5 = await avaliacaoRepository.CalcularMediaCategoriaAsync(id, CategoriaAvaliacao.MEDIDAS_MELHORIA_APERFEICOAMENTO, dataReferencia)
             };
         }
 

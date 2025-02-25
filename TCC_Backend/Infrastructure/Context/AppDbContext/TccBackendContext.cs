@@ -7,7 +7,6 @@ using TCC_Backend.Domain.Models.Servicos;
 using TCC_Backend.Domain.Models.Usuarios;
 using TCC_Backend.Domain.Models.UsuarioServicosAvaliacao;
 using TCC_Backend.Infrastructure.Context.Configurations.AvaliacoesEntityConfigurations;
-using TCC_Backend.Infrastructure.Context.Configurations.BaseEntityConfigurations;
 using TCC_Backend.Infrastructure.Context.Configurations.HistoricoEntityConfigurations;
 using TCC_Backend.Infrastructure.Context.Configurations.ServicoEntityConfigurations;
 using TCC_Backend.Infrastructure.Context.Configurations.UsuarioEntityConfigurations;
@@ -15,10 +14,8 @@ using TCC_Backend.Infrastructure.Context.Configurations.UsuarioServicosAvaliacao
 
 namespace TCC_Backend.Infrastructure.Context.AppDbContext
 {
-    public class TccBackendContext : DbContext
+    public class TccBackendContext(DbContextOptions options) : DbContext(options)
     {
-        public TccBackendContext(DbContextOptions options) : base(options) { }
-
         public DbSet<Auditoria> Auditorias { get; set; }
 
         public DbSet<Avaliacao> Avaliacoes { get; set; }
@@ -103,7 +100,7 @@ namespace TCC_Backend.Infrastructure.Context.AppDbContext
                 }
             }
 
-            if (auditorias.Any())
+            if (auditorias.Count == 0)
             {
                 await this.Set<Auditoria>().AddRangeAsync(auditorias, cancellationToken);
             }

@@ -1,1 +1,257 @@
-[]
+[
+  {
+    "ContainingType": "TCC_Backend.Application.Endpoints.Auth.AuthController",
+    "Method": "Get",
+    "RelativePath": "api/v1/auth",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "TCC_Backend.Application.Endpoints.Servico.Queries.GetServicos.GetServicosRequest",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TCC_Backend.Application.Endpoints.Auth.AuthController",
+    "Method": "Post",
+    "RelativePath": "api/v1/auth",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "TCC_Backend.Application.Endpoints.Auth.Commands.PostAuth.PostAuthRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TCC_Backend.Application.Endpoints.Auth.AuthController",
+    "Method": "GetById",
+    "RelativePath": "api/v1/auth/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TCC_Backend.Application.Endpoints.Auth.AuthController",
+    "Method": "Put",
+    "RelativePath": "api/v1/auth/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "TCC_Backend.Application.Endpoints.Avalicacao.Commands.Put.PutAvaliacao.PutAvaliacaoRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TCC_Backend.Application.Endpoints.Auth.AuthController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/auth/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TCC_Backend.Application.Endpoints.Avalicacao.AvaliacaoController",
+    "Method": "Get",
+    "RelativePath": "api/v1/avaliacao",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "TCC_Backend.Application.Endpoints.Servico.Queries.GetServicos.GetServicosRequest",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TCC_Backend.Application.Endpoints.Avalicacao.AvaliacaoController",
+    "Method": "Post",
+    "RelativePath": "api/v1/avaliacao",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "TCC_Backend.Application.Endpoints.Servico.Queries.GetServicos.GetServicosRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TCC_Backend.Application.Endpoints.Avalicacao.AvaliacaoController",
+    "Method": "GetById",
+    "RelativePath": "api/v1/avaliacao/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TCC_Backend.Application.Endpoints.Avalicacao.AvaliacaoController",
+    "Method": "Put",
+    "RelativePath": "api/v1/avaliacao/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "TCC_Backend.Application.Endpoints.Avalicacao.Commands.Put.PutAvaliacao.PutAvaliacaoRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TCC_Backend.Application.Endpoints.Avalicacao.AvaliacaoController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/avaliacao/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TCC_Backend.Application.Endpoints.Servico.ServicoController",
+    "Method": "Get",
+    "RelativePath": "api/v1/servico",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "TCC_Backend.Application.Endpoints.Servico.Queries.GetServicos.GetServicosRequest",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TCC_Backend.Application.Endpoints.Servico.ServicoController",
+    "Method": "Post",
+    "RelativePath": "api/v1/servico",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "TCC_Backend.Application.Endpoints.Servico.Queries.GetServicos.GetServicosRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TCC_Backend.Application.Endpoints.Servico.ServicoController",
+    "Method": "GetById",
+    "RelativePath": "api/v1/servico/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TCC_Backend.Application.Endpoints.Servico.ServicoController",
+    "Method": "Put",
+    "RelativePath": "api/v1/servico/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "TCC_Backend.Application.Endpoints.Servico.Queries.GetServicos.GetServicosRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TCC_Backend.Application.Endpoints.Servico.ServicoController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/servico/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

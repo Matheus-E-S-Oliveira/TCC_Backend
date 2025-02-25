@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Globalization;
+using System.Security.Cryptography.Xml;
 using TCC_Backend.Domain.Enums;
 using TCC_Backend.Domain.Interfaces.IAvaliacaoRespositorys;
 using TCC_Backend.Infrastructure.Context.AppDbContext;
@@ -9,14 +11,33 @@ namespace TCC_Backend.Infrastructure.Repository.AvaliacaoRepositorys
     {
         public async Task<decimal> CalcularMediaCategoriaAsync(Guid id, CategoriaAvaliacao categoria, DateTime dataReferencia)
         {
-            return await context.Avaliacoes
-                                 .Where(a => (a.Categoria == categoria) 
+            var avaliacoes = await context.Avaliacoes
+                                 .Where(a => (a.Categoria == categoria)
                                     && (a.DataAvalicao.Month == dataReferencia.Month)
                                     && (a.DataAvalicao.Year == dataReferencia.Year)
                                     && (a.IdServico == id))
-                                 .Select(a => a.Nota)
-                                 .DefaultIfEmpty(0)
-                                 .AverageAsync();
+                                 .ToListAsync();
+
+            var filtradas = avaliacoes
+                            .Where(a => a.Categoria == categoria)
+                            .Select(a => a.Nota)
+                            .DefaultIfEmpty(0);
+
+            return filtradas.Average();
+        }
+
+        public async Task<decimal> CalcularMediaServicoAsync(Guid id, CategoriaAvaliacao categoria)
+        {
+            var avaliacoes = await context.Avaliacoes
+                                   .Where(a => a.IdServico == id)
+                                   .ToListAsync();
+
+            var filtradas = avaliacoes
+                            .Where(a => a.Categoria == categoria)
+                            .Select(a => a.Nota)
+                            .DefaultIfEmpty(0);
+
+            return filtradas.Average();
         }
 
         public async Task<List<Guid>> GetByIds()

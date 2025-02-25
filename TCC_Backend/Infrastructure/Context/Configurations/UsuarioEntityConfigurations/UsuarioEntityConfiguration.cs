@@ -35,6 +35,9 @@ namespace TCC_Backend.Infrastructure.Context.Configurations.UsuarioEntityConfigu
                 .HasMaxLength(14)
                 .IsRequired();
 
+            builder.Property(x => x.Password)
+                .IsRequired();
+
             builder.Property(x => x.Email)
                 .HasMaxLength(50)
                 .IsRequired();

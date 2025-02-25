@@ -1,4 +1,4 @@
-﻿using TCC_Backend.Application.Interfaces.IHistoricoService;
+﻿using TCC_Backend.Application.Interfaces.Servicos.IHistoricoServices;
 using TCC_Backend.Domain.Interfaces.ISerivicoRepositorys;
 
 namespace TCC_Backend.Infrastructure.Service.AtualizacaoHistoricoBackgroundServices

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 using TCC_Backend.Domain.Interfaces;
 
 namespace TCC_Backend.Domain.Models
@@ -7,8 +8,10 @@ namespace TCC_Backend.Domain.Models
     {
         public Guid Id { get; protected set; }
 
+        [JsonIgnore]
         public DateTime DataCriacao { get; private set; }
 
+        [JsonIgnore]
         public DateTime? DataAtualizacao { get; private set; }
 
         public virtual void AtualizarDataDeEstados(EntityState entityState)

@@ -9,5 +9,7 @@ namespace TCC_Backend.Domain.Interfaces.IAvaliacaoRespositorys
         Task ZerarAvaliacoesAsync(Guid id, DateTime dataReferencia);
 
         Task<List<Guid>> GetByIds();
+
+        Task<decimal> CalcularMediaServicoAsync(Guid id, CategoriaAvaliacao categoria);
     }
 }

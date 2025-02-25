@@ -1,4 +1,5 @@
-﻿using TCC_Backend.Domain.Enums;
+﻿using System.Text.Json.Serialization;
+using TCC_Backend.Domain.Enums;
 using TCC_Backend.Domain.Models.Servicos;
 
 namespace TCC_Backend.Domain.Models.Avaliacoes
@@ -25,6 +26,7 @@ namespace TCC_Backend.Domain.Models.Avaliacoes
 
         public DateTime DataAvalicao { get; private set; }
 
+        [JsonIgnore]
         public virtual Servico? Servico { get; set; }
 
 

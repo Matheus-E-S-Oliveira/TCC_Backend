@@ -1,4 +1,4 @@
-﻿using TCC_Backend.Application.Interfaces.IServicoBackgroundServices;
+﻿using TCC_Backend.Application.Interfaces.Servicos.IServicoBackgroundServices;
 using TCC_Backend.Infrastructure.Context.AppDbContext;
 
 namespace TCC_Backend.Application.Services.ServicoBackgroundServices
