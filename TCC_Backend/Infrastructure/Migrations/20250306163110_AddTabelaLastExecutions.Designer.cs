@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TCC_Backend.Infrastructure.Context.AppDbContext;
 
@@ -11,9 +12,11 @@ using TCC_Backend.Infrastructure.Context.AppDbContext;
 namespace TCC_Backend.Infrastructure.Migrations
 {
     [DbContext(typeof(TccBackendContext))]
-    partial class TccBackendContextModelSnapshot : ModelSnapshot
+    [Migration("20250306163110_AddTabelaLastExecutions")]
+    partial class AddTabelaLastExecutions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

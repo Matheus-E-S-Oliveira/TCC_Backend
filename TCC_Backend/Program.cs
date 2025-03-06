@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using TCC_Backend.Infrastructure.Configurations;
 using TCC_Backend.Infrastructure.Context.AppDbContext;
+using TCC_Backend.Infrastructure.Service.AtualizacaoHistoricoBackgroundServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -50,6 +51,8 @@ builder.Services.Configure<RouteOptions>(options =>
     options.LowercaseUrls = true;
     options.AppendTrailingSlash = false;
 });
+
+builder.Services.AddHostedService<AtualizacaoHistoricoBackgroundService>();
 
 
 var app = builder.Build();

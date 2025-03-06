@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TCC_Backend.Infrastructure.Context.AppDbContext;
 
@@ -11,9 +12,11 @@ using TCC_Backend.Infrastructure.Context.AppDbContext;
 namespace TCC_Backend.Infrastructure.Migrations
 {
     [DbContext(typeof(TccBackendContext))]
-    partial class TccBackendContextModelSnapshot : ModelSnapshot
+    [Migration("20250306162432_AddTabelaLastExecution")]
+    partial class AddTabelaLastExecution
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -145,29 +148,6 @@ namespace TCC_Backend.Infrastructure.Migrations
                     b.HasIndex("IdServico");
 
                     b.ToTable("historico", (string)null);
-                });
-
-            modelBuilder.Entity("TCC_Backend.Domain.Models.LastExecutions.LastExecution", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
-
-                    b.Property<DateTime?>("DataAtualizacao")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<DateTime>("DataCriacao")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime(6)")
-                        .HasDefaultValueSql("CURRENT_TIMESTAMP(6)");
-
-                    b.Property<DateTime?>("LastExecutionDate")
-                        .IsRequired()
-                        .HasColumnType("datetime(6)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("last_execution", (string)null);
                 });
 
             modelBuilder.Entity("TCC_Backend.Domain.Models.Servicos.Servico", b =>

@@ -12,6 +12,10 @@ using TCC_Backend.Infrastructure.Repository.HistoricoRepositorys;
 using TCC_Backend.Application.Interfaces.Servicos.IHistoricoServices;
 using TCC_Backend.Application.Interfaces.Servicos.IGenerateJwtTokenServices;
 using TCC_Backend.Application.Interfaces.Servicos.IServicoBackgroundServices;
+using TCC_Backend.Domain.Interfaces.ILastExecutionDateRepositorys;
+using TCC_Backend.Infrastructure.Repository.LastExecutionDateRepositorys;
+using TCC_Backend.Infrastructure.Service.AtualizacaoHistoricoBackgroundServices;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace TCC_Backend.Infrastructure.Configurations
 {
@@ -20,9 +24,11 @@ namespace TCC_Backend.Infrastructure.Configurations
         public static void AddApplicationServices(this IServiceCollection services)
         {
             services.AddScoped<IAvaliacaoRepository, AvaliacaoRepository>();
+            services.AddScoped<AtualizacaoHistoricoBackgroundService>();
             services.AddScoped<IGenerateJwtTokenService, GenerateJwtTokenService>();
             services.AddScoped<IHistoricoRepository, HistoricoRepository>();
             services.AddScoped<IHistoricoService, HistoricoService>();
+            services.AddScoped<ILastExecutionDateRepository, LastExecutionDateRepository>();
             services.AddScoped<IServicoRepository, ServicoRepository>();
             services.AddScoped<IServicoBackgroundService, ServicoBackgroundService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
