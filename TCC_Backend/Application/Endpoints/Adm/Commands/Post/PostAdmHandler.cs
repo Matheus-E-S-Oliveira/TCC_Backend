@@ -9,8 +9,8 @@ namespace TCC_Backend.Application.Endpoints.Adm.Commands.Post
         {
             var result = await admRepository.RegisterAdm(request);
 
-            if (result.Sussecs > 0)
-                return Created("Adm salvo com sucesso!", result.AccessToken,  StatusCodes.Status201Created);
+            if (result > 0)
+                return OkResponse("Adm salvo com sucesso!", StatusCodes.Status201Created);
 
             return Error("Erro ao registra o adm", StatusCodes.Status400BadRequest);
         }

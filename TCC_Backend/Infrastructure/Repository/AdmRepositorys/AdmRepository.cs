@@ -10,7 +10,7 @@ namespace TCC_Backend.Infrastructure.Repository.AdmRepositorys
 {
     public class AdmRepository(TccBackendContext context) : IAdmRepository
     {
-        public async Task<TokenDto> RegisterAdm(PostAdmRequest request)
+        public async Task<int> RegisterAdm(PostAdmRequest request)
         {
             var newAdm = new Adm(
                 userName: request.UserName,
@@ -20,13 +20,7 @@ namespace TCC_Backend.Infrastructure.Repository.AdmRepositorys
 
             await context.AddAsync(newAdm);
 
-            var resutlt = await context.SaveChangesAsync();
-
-            return new TokenDto
-            {
-                Sussecs = resutlt,
-                AccessToken = JwtTokenGenerator.GenerateTokenAdm(newAdm)
-            };
+            return await context.SaveChangesAsync();
         }
     }
 }

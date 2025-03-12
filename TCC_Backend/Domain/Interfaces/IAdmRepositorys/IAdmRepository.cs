@@ -5,6 +5,6 @@ namespace TCC_Backend.Domain.Interfaces.IAdmRepositorys
 {
     public interface IAdmRepository
     {
-        Task<TokenDto> RegisterAdm(PostAdmRequest request);
+        Task<int> RegisterAdm(PostAdmRequest request);
     }
 }
