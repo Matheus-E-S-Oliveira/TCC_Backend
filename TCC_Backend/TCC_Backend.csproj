@@ -10,6 +10,8 @@
   <ItemGroup>
     <Folder Include="Application\Endpoints\Auth\Queries\" />
     <Folder Include="Application\Endpoints\Servico\Commands\" />
+    <Folder Include="Application\Endpoints\UsuarioServicoAvaliacao\Commands\" />
+    <Folder Include="Application\Endpoints\Usuario\Queries\" />
   </ItemGroup>
 
   <ItemGroup>

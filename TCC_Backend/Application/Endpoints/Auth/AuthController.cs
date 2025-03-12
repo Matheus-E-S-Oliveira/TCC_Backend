@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TCC_Backend.Application.Endpoints.Auth.Commands.PostAuth;
+using TCC_Backend.Application.Endpoints.Auth.Commands.PostAuthAdm;
 using TCC_Backend.Application.Endpoints.Avalicacao.Commands.Put.PutAvaliacao;
 using TCC_Backend.Application.Endpoints.Avalicacao.Queries.GetAvaliacaoPorServico;
 using TCC_Backend.Application.Endpoints.Servico.Queries.GetServicos;
@@ -24,6 +25,12 @@ namespace TCC_Backend.Application.Endpoints.Auth
         public async Task<IActionResult> Post([FromBody] PostAuthRequest request)
         {
             return await Post<PostAuthRequest, PostAuthHandler>(request);
+        }
+
+        [HttpPost("adm")]
+        public async Task<IActionResult> PostAdm([FromBody] PostAuthAdmRequest request)
+        {
+            return await Post<PostAuthAdmRequest, PostAuthAdmHandler>(request);
         }
 
         [HttpPut("{id}")]

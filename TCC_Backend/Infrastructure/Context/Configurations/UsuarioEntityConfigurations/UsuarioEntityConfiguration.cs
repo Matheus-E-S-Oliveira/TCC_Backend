@@ -46,6 +46,9 @@ namespace TCC_Backend.Infrastructure.Context.Configurations.UsuarioEntityConfigu
                 .HasMaxLength(12)
                 .IsRequired();
 
+            builder.Property(x => x.UserName)
+                .HasMaxLength(20);
+
             builder.HasMany(x => x.UsuarioServicoAvaliacoes)
                 .WithOne(x => x.Usuario)
                 .HasForeignKey(x => x.UsuarioId)

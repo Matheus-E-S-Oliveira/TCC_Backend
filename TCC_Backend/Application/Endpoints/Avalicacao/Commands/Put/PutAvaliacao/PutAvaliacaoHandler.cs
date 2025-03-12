@@ -1,50 +1,33 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using TCC_Backend.Infrastructure.Context.AppDbContext;
 using TCC_Backend.Domain.Interfaces.ISerivicoRepositorys;
+using TCC_Backend.Domain.Interfaces.IAvaliacaoRespositorys;
+using TCC_Backend.Domain.Interfaces.IUsuarioServicoAvaliacaoRepositorys;
 
 namespace TCC_Backend.Application.Endpoints.Avalicacao.Commands.Put.PutAvaliacao
 {
-    public class PutAvaliacaoHandler(TccBackendContext context, IServicoRepository servicoRepository) : BaseApiController
+    public class PutAvaliacaoHandler(IAvaliacaoRepository avaliacaoRepository,
+                                     IServicoRepository servicoRepository,
+                                     IUsuarioServicoAvaliacaoRepository usuarioServicoAvaliacaoRepository) : BaseApiController
     {
         public async Task<IActionResult> Handle(Guid id, PutAvaliacaoRequest request)
         {
-            var avaliacoes = await context.Avaliacoes
-                                .Where(x => x.IdServico == id)
-                                .ToListAsync();
+            var avaliacoes = await avaliacaoRepository.GetAvalicaoServicoById(id);
 
-            if (avaliacoes.Count == 0) return Error("Serviço não encontrado");
-            if (request.Respostas == null) return Error("Erro ao salvar a avaliação");
+            if (avaliacoes.Count == 0) return Error("Serviço não encontrado", StatusCodes.Status404NotFound);
+            if (request.Respostas == null) return Error("Erro ao salvar a avaliação", StatusCodes.Status400BadRequest);
 
-            bool hasChanges = false;
+            var result =  await avaliacaoRepository.UpdateAvalicaoService(avaliacoes, request.Respostas);
 
-            foreach (var avaliacao in avaliacoes)
-            {
-                if (request.Respostas.TryGetValue((int)avaliacao.Categoria, out int nota))
-                {
-                    var notaAcumulada = avaliacao.Nota + nota;
-                    avaliacao.Update(
-                        nota: notaAcumulada,
-                        dataAvalicao: DateTime.UtcNow
-                    );
+            if(result is string errorMenssage) 
+                return Error(errorMenssage, StatusCodes.Status422UnprocessableEntity);
 
-                    hasChanges = true;
-                }
-
-            }
-
-            if (!hasChanges)
-                return Error("Nenhuma alteração foi feita.");
-
-            int saved = await context.SaveChangesAsync();
-
-            if (saved > 0) {
+            if (result is int count && count > 0) {
                 await servicoRepository.AtualizarNumeroAvaliacoes(id);
-                return OkResponse("Avaliação salva com sucesso!");
+                await usuarioServicoAvaliacaoRepository.UpdateDataUltimaAvalicaoPorServico(request.UserId, id);
+                return OkResponse("Avaliação salva com sucesso!", StatusCodes.Status200OK);
             }
-            else
-                return HandleException();
 
+            return HandleException();
         }
     }
 }

@@ -1,29 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using TCC_Backend.Infrastructure.Context.AppDbContext;
-using TCC_Backend.Application.Interfaces.Servicos.IGenerateJwtTokenServices;
+using TCC_Backend.Domain.Interfaces.IAuthRepositorys;
 
 namespace TCC_Backend.Application.Endpoints.Auth.Commands.PostAuth
 {
-    public class PostAuthHandler(TccBackendContext context, IGenerateJwtTokenService generateJwtTokenService) : BaseApiController
+    public class PostAuthHandler(IAuthRepository authRepository) : BaseApiController
     {
-        public async Task<IActionResult> Login([FromBody] PostAuthRequest login)
+        public async Task<IActionResult> Handle(PostAuthRequest request)
         {
-            if (login == null || string.IsNullOrWhiteSpace(login.Username) || string.IsNullOrWhiteSpace(login.Password))
-            {
-                return BadRequest("Usuário e senha são obrigatórios.");
-            }
+            var result = await authRepository.Login(request);
 
-            // Verificar usuário no banco de dados
-            var user = await context.Usuarios.FirstOrDefaultAsync(u => u.Nome == login.Username);
+            if (result.Sussecs > 0)
+                return Created("Login realizado com sucesso", result.AccessToken, StatusCodes.Status200OK);
 
-            if (user == null || !BCrypt.Net.BCrypt.Verify(login.Password, user.Password))
-            {
-                return Unauthorized("Credenciais inválidas");
-            }
-
-            var token = generateJwtTokenService.GenerateJwtToken(user.Nome);
-            return Ok(new { Token = token });
+            return BadRequest("E-mail/Nome de usuário ou senha inválidos.", StatusCodes.Status401Unauthorized);
         }
     }
 }

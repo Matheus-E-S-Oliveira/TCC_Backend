@@ -4,8 +4,7 @@ using TCC_Backend.Domain.Interfaces.ISerivicoRepositorys;
 
 namespace TCC_Backend.Infrastructure.Service.AtualizacaoHistoricoBackgroundServices
 {
-    public class AtualizacaoHistoricoBackgroundService(
-                                                       IServiceScopeFactory serviceScopeFactory) : BackgroundService
+    public class AtualizacaoHistoricoBackgroundService(IServiceScopeFactory serviceScopeFactory) : BackgroundService
     {
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
@@ -32,7 +31,7 @@ namespace TCC_Backend.Infrastructure.Service.AtualizacaoHistoricoBackgroundServi
             }
         }
 
-        private async Task ExecuteUpdateAsync(IServiceProvider serviceProvider, DateTime dataReferencia)
+        private static async Task ExecuteUpdateAsync(IServiceProvider serviceProvider, DateTime dataReferencia)
         {
             var servicoRepository = serviceProvider.GetRequiredService<IServicoRepository>();
             var historicoService = serviceProvider.GetRequiredService<IHistoricoService>();

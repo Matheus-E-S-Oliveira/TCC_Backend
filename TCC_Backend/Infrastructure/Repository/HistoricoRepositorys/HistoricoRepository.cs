@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Migrations;
 using TCC_Backend.Domain.Interfaces.IHistorioRepositorys;
 using TCC_Backend.Domain.Models.Historicos;
 using TCC_Backend.Infrastructure.Context.AppDbContext;

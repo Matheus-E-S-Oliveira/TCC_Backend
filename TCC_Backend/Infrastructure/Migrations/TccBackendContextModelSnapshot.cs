@@ -22,6 +22,43 @@ namespace TCC_Backend.Infrastructure.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
+            modelBuilder.Entity("TCC_Backend.Domain.Models.Adms.Adm", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime?>("DataAtualizacao")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime(6)")
+                        .HasDefaultValueSql("CURRENT_TIMESTAMP(6)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("adm", (string)null);
+                });
+
             modelBuilder.Entity("TCC_Backend.Domain.Models.Auditorias.Auditoria", b =>
                 {
                     b.Property<Guid>("Id")
@@ -170,6 +207,53 @@ namespace TCC_Backend.Infrastructure.Migrations
                     b.ToTable("last_execution", (string)null);
                 });
 
+            modelBuilder.Entity("TCC_Backend.Domain.Models.Reports.Report", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("ContactEmail")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime?>("DataAtualizacao")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime(6)")
+                        .HasDefaultValueSql("CURRENT_TIMESTAMP(6)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("varchar(500)");
+
+                    b.Property<string>("ErrorCategory")
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ReportType")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("SuggestionCategory")
+                        .HasMaxLength(22)
+                        .HasColumnType("varchar(22)");
+
+                    b.Property<bool>("WantsContact")
+                        .HasColumnType("tinyint(1)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("report", (string)null);
+                });
+
             modelBuilder.Entity("TCC_Backend.Domain.Models.Servicos.Servico", b =>
                 {
                     b.Property<Guid>("Id")
@@ -267,6 +351,10 @@ namespace TCC_Backend.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("SecaoEleitoral")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Telefone")
                         .IsRequired()
                         .HasMaxLength(14)
@@ -276,6 +364,19 @@ namespace TCC_Backend.Infrastructure.Migrations
                         .IsRequired()
                         .HasMaxLength(12)
                         .HasColumnType("varchar(12)");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("ZonaEleitoral")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 

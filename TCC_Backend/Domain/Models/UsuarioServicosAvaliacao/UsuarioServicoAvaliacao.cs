@@ -28,5 +28,10 @@ namespace TCC_Backend.Domain.Models.UsuarioServicosAvaliacao
 
         [JsonIgnore]
         public virtual Servico? Servico { get; set; }
+
+        public void Update(DateTime dataUltimaAvaliacao)
+        {
+            DataUltimaAvaliacao = dataUltimaAvaliacao;
+        }
     }
 }

@@ -2,6 +2,7 @@
 using TCC_Backend.Application.Endpoints.Avalicacao.Commands.Put.PutAvaliacao;
 using TCC_Backend.Application.Endpoints.Avalicacao.Queries.GetAvaliacaoPorServico;
 using TCC_Backend.Application.Endpoints.Servico.Queries.GetServicos;
+using TCC_Backend.Application.Responses.PutResponses;
 
 namespace TCC_Backend.Application.Endpoints.Avalicacao
 {
@@ -25,7 +26,7 @@ namespace TCC_Backend.Application.Endpoints.Avalicacao
         {
             return await Post<GetServicosRequest, GetServicosHandler>(request);
         }
-
+        [ProducesResponseType(typeof(ResponsePutJson), StatusCodes.Status200OK)]
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(Guid id, [FromBody] PutAvaliacaoRequest request)
         {

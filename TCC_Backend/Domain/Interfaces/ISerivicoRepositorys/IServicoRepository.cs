@@ -10,5 +10,7 @@ namespace TCC_Backend.Domain.Interfaces.ISerivicoRepositorys
         Task<decimal> CalcularMediaServicoAsync(Guid id);
 
         Task AtualizarNumeroAvaliacoes(Guid id);
+
+        Task ZerarNumeroDeAvaliacoes(Guid id);
     }
 }

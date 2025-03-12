@@ -14,7 +14,17 @@ namespace TCC_Backend.Application.Endpoints
             return StatusCode(statusCode, new { success = true, message, statusCode });
         }
 
+        protected IActionResult Created(string message, string token, int statusCode = 200)
+        {
+            return StatusCode(statusCode, new { success = true, message, token, statusCode });
+        }
+
         protected IActionResult Error(string message, int statusCode = 400)
+        {
+            return StatusCode(statusCode, new { success = false, message, statusCode });
+        }
+
+        protected IActionResult BadRequest(string message, int statusCode = 400)
         {
             return StatusCode(statusCode, new { success = false, message, statusCode });
         }

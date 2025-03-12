@@ -1,15 +1,19 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TCC_Backend.Domain.Models;
+using TCC_Backend.Domain.Models.Adms;
 using TCC_Backend.Domain.Models.Auditorias;
 using TCC_Backend.Domain.Models.Avaliacoes;
 using TCC_Backend.Domain.Models.Historicos;
 using TCC_Backend.Domain.Models.LastExecutions;
+using TCC_Backend.Domain.Models.Reports;
 using TCC_Backend.Domain.Models.Servicos;
 using TCC_Backend.Domain.Models.Usuarios;
 using TCC_Backend.Domain.Models.UsuarioServicosAvaliacao;
+using TCC_Backend.Infrastructure.Context.Configurations.AdmEntityConfigurations;
 using TCC_Backend.Infrastructure.Context.Configurations.AvaliacoesEntityConfigurations;
 using TCC_Backend.Infrastructure.Context.Configurations.HistoricoEntityConfigurations;
 using TCC_Backend.Infrastructure.Context.Configurations.LastExecutionEntityConfigurations;
+using TCC_Backend.Infrastructure.Context.Configurations.ReportEntityConfigurations;
 using TCC_Backend.Infrastructure.Context.Configurations.ServicoEntityConfigurations;
 using TCC_Backend.Infrastructure.Context.Configurations.UsuarioEntityConfigurations;
 using TCC_Backend.Infrastructure.Context.Configurations.UsuarioServicosAvaliacao;
@@ -18,6 +22,8 @@ namespace TCC_Backend.Infrastructure.Context.AppDbContext
 {
     public class TccBackendContext(DbContextOptions options) : DbContext(options)
     {
+        public DbSet<Adm> Adms { get; set; }
+
         public DbSet<Auditoria> Auditorias { get; set; }
 
         public DbSet<Avaliacao> Avaliacoes { get; set; }
@@ -28,16 +34,20 @@ namespace TCC_Backend.Infrastructure.Context.AppDbContext
 
         public DbSet<Servico> Servicos { get; set; }
 
+        public DbSet<Report> Reports { get; set; }
+
         public DbSet<Usuario> Usuarios { get; set; }
 
         public DbSet<UsuarioServicoAvaliacao> UsuarioServicoAvaliacoes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new AdmEntityConfiguration());
             modelBuilder.ApplyConfiguration(new AvalicacaoEnityConfiguration());
             modelBuilder.ApplyConfiguration(new HistoricoEntityConfiguration());
             modelBuilder.ApplyConfiguration(new LastExecutionEntityConfiguration());
             modelBuilder.ApplyConfiguration(new ServicoEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new ReportEntityConfiguration());
             modelBuilder.ApplyConfiguration(new UsuarioEntityConfiguration());
             modelBuilder.ApplyConfiguration(new UsuarioServicoAvaliacaoEntityConfiguration());
 
