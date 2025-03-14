@@ -5,6 +5,8 @@ namespace TCC_Backend.Domain.Interfaces.IUsuarioRepositorys
 {
     public interface IUsuarioRepository
     {
-        Task<TokenDto> RegisterUsuario(RegisterUsuarioRequest request); 
+        Task<TokenDto> RegisterUsuario(RegisterUsuarioRequest request);
+
+        Task<List<string>> Validar(RegisterUsuarioRequest request);
     }
 }

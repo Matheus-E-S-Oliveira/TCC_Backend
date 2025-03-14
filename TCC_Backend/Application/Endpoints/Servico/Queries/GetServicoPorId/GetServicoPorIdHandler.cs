@@ -14,7 +14,7 @@ namespace TCC_Backend.Application.Endpoints.Servico.Queries.GetServicoPorId
 
             if (result == null)
             {
-                return Error("Serviço não encontrado");
+                return Error(["Serviço não encontrado"]);
             }
 
             return Success(result);

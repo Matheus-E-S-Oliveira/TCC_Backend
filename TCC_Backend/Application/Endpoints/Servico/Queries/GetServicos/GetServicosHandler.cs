@@ -26,7 +26,7 @@ namespace TCC_Backend.Application.Endpoints.Servico.Queries.GetServicos
 
             if (result.Count == 0)
             {
-                return Error("Serviço não encontrado");
+                return Error(["Serviço não encontrado"]);
             }
 
             foreach (var servico in result)

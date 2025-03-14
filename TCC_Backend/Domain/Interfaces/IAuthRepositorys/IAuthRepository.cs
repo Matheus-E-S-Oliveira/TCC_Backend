@@ -9,5 +9,9 @@ namespace TCC_Backend.Domain.Interfaces.IAuthRepositorys
         Task<TokenDto> Login(PostAuthRequest request);
 
         Task<TokenDto> LoginAdm(PostAuthAdmRequest request);
+
+        Task<List<string>> Validar(PostAuthRequest request);
+
+        Task<List<string>> Validar(PostAuthAdmRequest request);
     }
 }

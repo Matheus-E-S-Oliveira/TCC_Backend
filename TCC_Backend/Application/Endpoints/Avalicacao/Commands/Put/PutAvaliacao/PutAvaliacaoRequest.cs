@@ -9,7 +9,7 @@ namespace TCC_Backend.Application.Endpoints.Avalicacao.Commands.Put.PutAvaliacao
 
         [FromBody]
 
-        public Guid UserId { get; set; }
+        public string Token { get; set; } = string.Empty;
 
         public Dictionary<int, int>? Respostas { get; set; }
 

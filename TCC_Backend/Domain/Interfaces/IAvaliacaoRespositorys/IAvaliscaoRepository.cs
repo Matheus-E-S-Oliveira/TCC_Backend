@@ -1,4 +1,5 @@
-﻿using TCC_Backend.Domain.Enums;
+﻿using TCC_Backend.Application.Dtos.TokenValidationDtos;
+using TCC_Backend.Domain.Enums;
 using TCC_Backend.Domain.Models.Avaliacoes;
 
 namespace TCC_Backend.Domain.Interfaces.IAvaliacaoRespositorys
@@ -11,10 +12,14 @@ namespace TCC_Backend.Domain.Interfaces.IAvaliacaoRespositorys
 
         Task<List<Guid>> GetByIds();
 
+        Task<TokenValidationDto> CheckAuth(string token, Guid idServico);
+
         Task<decimal> CalcularMediaServicoAsync(Guid id, CategoriaAvaliacao categoria);
 
         Task<List<Avaliacao>> GetAvalicaoServicoById(Guid id);
 
         Task<object> UpdateAvalicaoService(List<Avaliacao> avalicaoService, Dictionary<int, int> Respostas);
+
+
     }
 }

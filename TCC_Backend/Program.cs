@@ -54,6 +54,7 @@ builder.Services.Configure<RouteOptions>(options =>
 
 builder.Services.AddHostedService<AtualizacaoHistoricoBackgroundService>();
 
+builder.Services.AddValidators();
 
 var app = builder.Build();
 

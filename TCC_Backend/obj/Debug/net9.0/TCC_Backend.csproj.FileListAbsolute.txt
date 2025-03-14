@@ -179,3 +179,6 @@ E:\GitHub\TCC\TCC_Backend\TCC_Backend\bin\Debug\net9.0\Microsoft.IdentityModel.P
 E:\GitHub\TCC\TCC_Backend\TCC_Backend\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 E:\GitHub\TCC\TCC_Backend\TCC_Backend\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
 E:\GitHub\TCC\TCC_Backend\TCC_Backend\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+E:\GitHub\TCC\TCC_Backend\TCC_Backend\bin\Debug\net9.0\FluentValidation.dll
+E:\GitHub\TCC\TCC_Backend\TCC_Backend\bin\Debug\net9.0\FluentValidation.AspNetCore.dll
+E:\GitHub\TCC\TCC_Backend\TCC_Backend\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll

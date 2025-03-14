@@ -5,5 +5,7 @@ namespace TCC_Backend.Domain.Interfaces.IReportRepositorys
     public interface IReportRepository
     {
         Task<int> SaveReport(PostReportRequest request);
+
+        Task<List<string>> Validar(PostReportRequest request);
     }
 }

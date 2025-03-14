@@ -878,6 +878,10 @@
           "email": {
             "type": "string",
             "nullable": true
+          },
+          "token": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -950,9 +954,9 @@
             "type": "string",
             "format": "uuid"
           },
-          "userId": {
+          "token": {
             "type": "string",
-            "format": "uuid"
+            "nullable": true
           },
           "respostas": {
             "type": "object",

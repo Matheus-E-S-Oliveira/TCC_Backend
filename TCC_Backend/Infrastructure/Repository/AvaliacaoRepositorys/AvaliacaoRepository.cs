@@ -1,9 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TCC_Backend.Application.Dtos.TokenValidationDtos;
 using TCC_Backend.Domain.Enums;
 using TCC_Backend.Domain.Interfaces.IAvaliacaoRespositorys;
 using TCC_Backend.Domain.Interfaces.ISerivicoRepositorys;
 using TCC_Backend.Domain.Models.Avaliacoes;
 using TCC_Backend.Infrastructure.Context.AppDbContext;
+using TCC_Backend.Infrastructure.Service.TokenServices;
 
 namespace TCC_Backend.Infrastructure.Repository.AvaliacaoRepositorys
 {
@@ -52,6 +54,67 @@ namespace TCC_Backend.Infrastructure.Repository.AvaliacaoRepositorys
             return await context.Avaliacoes
                                     .Select(a => a.Id)
                                     .ToListAsync();
+        }
+
+        public async Task<TokenValidationDto> CheckAuth(string token, Guid idServico)
+        {
+            var type = TokenService.ObterDadosDoToken(token);
+
+            if (string.IsNullOrWhiteSpace(type.Sub) || string.IsNullOrWhiteSpace(type.Type))
+            {
+                return new TokenValidationDto
+                {
+                    IsTokenValid = false,
+                    Menssage = "Token inválido. Por favor, faça login novamente."
+                };
+            }
+
+            if (!Guid.TryParse(type.Sub, out Guid subGuid))
+            {
+                return new TokenValidationDto
+                {
+                    IsTokenValid = false,
+                    Menssage = "Token inválido. Dados corrompidos. Por favor, faça login novamente."
+                };
+            }
+
+            if (type.Type != "user")
+            {
+                return new TokenValidationDto
+                {
+                    IsTokenValid = false,
+                    Menssage = "Apenas usuários podem avaliar o serviço."
+                };
+            }
+
+            if(await CheckUltimaAvalicaoPorServico(idServico, subGuid) == false)
+            {
+                return new TokenValidationDto
+                {
+                    IsTokenValid = false,
+                    Menssage = "Você já avaliou este serviço neste mês. Não é possível avaliar novamente. Tente no próximo mês."
+                };
+            }
+
+            return new TokenValidationDto
+            {
+                IsTokenValid = await context.Usuarios.AnyAsync(x => x.Id == subGuid && x.Type == type.Type),
+                Menssage = "Você não tem permissão para registrar um administrador.",
+                Id = subGuid
+            };
+        }
+
+        private async Task<bool> CheckUltimaAvalicaoPorServico(Guid idServico, Guid idUser)
+        {
+            var result = await context.UsuarioServicoAvaliacoes
+                .Where(x => x.UsuarioId == idUser && x.ServicoId == idServico)
+                .Select(x => x.DataUltimaAvaliacao)
+                .FirstOrDefaultAsync();
+
+            if (result.Month == DateTime.UtcNow.Month && result.Year == DateTime.UtcNow.Year)
+                return false;
+
+            return true;
         }
 
         public async Task<object> UpdateAvalicaoService(List<Avaliacao> avalicaoService, Dictionary<int, int> Respostas)

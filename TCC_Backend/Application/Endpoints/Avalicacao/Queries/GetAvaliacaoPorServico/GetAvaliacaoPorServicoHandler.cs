@@ -14,7 +14,7 @@ namespace TCC_Backend.Application.Endpoints.Avalicacao.Queries.GetAvaliacaoPorSe
 
             if (result == null || result.Count == 0)
             {
-                return Error("Não foram encontradas avaliações para este serviço");
+                return Error(["Não foram encontradas avaliações para este serviço"]);
             }
 
             return Success(result);

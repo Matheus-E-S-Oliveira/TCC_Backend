@@ -9,22 +9,23 @@ namespace TCC_Backend.Application.Endpoints
             return Ok(new { success = true, data, statusCode });
         }
 
-        protected IActionResult OkResponse(string message, int statusCode = 200)
+        protected IActionResult OkResponse(List<string> message, int statusCode = 200)
         {
             return StatusCode(statusCode, new { success = true, message, statusCode });
         }
 
-        protected IActionResult Created(string message, string token, int statusCode = 200)
+        protected IActionResult Created(List<string> message, string token, int statusCode = 200)
         {
             return StatusCode(statusCode, new { success = true, message, token, statusCode });
         }
 
-        protected IActionResult Error(string message, int statusCode = 400)
+        protected IActionResult Error(List<string> message, int statusCode = 400)
         {
             return StatusCode(statusCode, new { success = false, message, statusCode });
         }
 
-        protected IActionResult BadRequest(string message, int statusCode = 400)
+
+        protected IActionResult BadRequest(List<string> message, int statusCode = 400)
         {
             return StatusCode(statusCode, new { success = false, message, statusCode });
         }
