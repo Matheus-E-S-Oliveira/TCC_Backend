@@ -6,6 +6,7 @@ using TCC_Backend.Domain.Models.Avaliacoes;
 using TCC_Backend.Domain.Models.Historicos;
 using TCC_Backend.Domain.Models.LastExecutions;
 using TCC_Backend.Domain.Models.Reports;
+using TCC_Backend.Domain.Models.SecaoEleitorais;
 using TCC_Backend.Domain.Models.Servicos;
 using TCC_Backend.Domain.Models.Usuarios;
 using TCC_Backend.Domain.Models.UsuarioServicosAvaliacao;
@@ -14,6 +15,7 @@ using TCC_Backend.Infrastructure.Context.Configurations.AvaliacoesEntityConfigur
 using TCC_Backend.Infrastructure.Context.Configurations.HistoricoEntityConfigurations;
 using TCC_Backend.Infrastructure.Context.Configurations.LastExecutionEntityConfigurations;
 using TCC_Backend.Infrastructure.Context.Configurations.ReportEntityConfigurations;
+using TCC_Backend.Infrastructure.Context.Configurations.SecaoEleitoralEntityConfigurations;
 using TCC_Backend.Infrastructure.Context.Configurations.ServicoEntityConfigurations;
 using TCC_Backend.Infrastructure.Context.Configurations.UsuarioEntityConfigurations;
 using TCC_Backend.Infrastructure.Context.Configurations.UsuarioServicosAvaliacao;
@@ -32,6 +34,8 @@ namespace TCC_Backend.Infrastructure.Context.AppDbContext
 
         public DbSet<LastExecution> LastExecutions { get; set; }
 
+        public DbSet<SecaoEleitoral> SecaoEleitorais { get; set; }
+
         public DbSet<Servico> Servicos { get; set; }
 
         public DbSet<Report> Reports { get; set; }
@@ -46,6 +50,7 @@ namespace TCC_Backend.Infrastructure.Context.AppDbContext
             modelBuilder.ApplyConfiguration(new AvalicacaoEnityConfiguration());
             modelBuilder.ApplyConfiguration(new HistoricoEntityConfiguration());
             modelBuilder.ApplyConfiguration(new LastExecutionEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new SecaoEleitoralEntityConfiguration());
             modelBuilder.ApplyConfiguration(new ServicoEntityConfiguration());
             modelBuilder.ApplyConfiguration(new ReportEntityConfiguration());
             modelBuilder.ApplyConfiguration(new UsuarioEntityConfiguration());

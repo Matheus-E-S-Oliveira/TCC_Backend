@@ -61,9 +61,25 @@ namespace TCC_Backend.Infrastructure.Repository.UsuarioRepositorys
             return await context.Usuarios.AnyAsync(x => cpf.Equals(x.Cpf));
         }
 
+        private async Task<bool> UserZonaEleitoral(string zonaEleitoral)
+        {
+            return await context.SecaoEleitorais.AnyAsync(x => zonaEleitoral.Equals(x.ZonaEleitoral));
+        }
+
+        private async Task<bool> UserSecaoEleitoral(string secaoEleitoral, string zonaEleitoral)
+        {
+            return await context.SecaoEleitorais.AnyAsync(x => zonaEleitoral.Equals(x.ZonaEleitoral) && secaoEleitoral.Equals(x.Numero));
+        }
+
         public async Task<List<string>> Validar(RegisterUsuarioRequest request)
         {
             var validate = validations.Validate(request);
+
+            if (await UserZonaEleitoral(request.ZonaEleitoral) == false)
+                validate.Errors.Add(new ValidationFailure("ZonaEleitoral", "A Zona Eleitoral informada não pertence a essa cidade."));
+
+            if (await UserSecaoEleitoral(request.SecaoEleitoral, request.ZonaEleitoral) == false)
+                validate.Errors.Add(new ValidationFailure("SecaoEleitoral", "Essa seção eleitoral não pertence à Zona Eleitoral desta cidade."));
 
             if (await UserTituloEleitorExist(request.TituloEleitor))
                 validate.Errors.Add(new ValidationFailure("TituloEleitor", "O Título de Eleitor informado já está cadastrado. Por favor, verifique e tente novamente."));

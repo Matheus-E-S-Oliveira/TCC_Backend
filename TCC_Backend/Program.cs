@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using TCC_Backend.Domain.Models.SecaoEleitorais;
 using TCC_Backend.Infrastructure.Configurations;
 using TCC_Backend.Infrastructure.Context.AppDbContext;
 using TCC_Backend.Infrastructure.Service.AtualizacaoHistoricoBackgroundServices;
