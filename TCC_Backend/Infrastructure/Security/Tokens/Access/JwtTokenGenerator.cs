@@ -9,18 +9,16 @@ using TCC_Backend.Infrastructure.Interfaces.IUltimaAvalicaoPorServicos;
 
 namespace TCC_Backend.Infrastructure.Security.Tokens.Access
 {
-    public class JwtTokenGenerator(IUltimaAvalicaoPorServico ultimaAvalicaoPorServico)
+    public class JwtTokenGenerator()
     {
-        public async Task<string> Generate(Usuario user)
+        public string Generate(Usuario user)
         {
-            var servico = await ultimaAvalicaoPorServico.GetUltimaAvaliacaiServicoFromUser(user.Id);
-
+            
             var claims = new List<Claim>()
             {
                 new(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
                 new(JwtRegisteredClaimNames.Name, user.Nome),
                 new("type", user.Type),
-                new("servicos_avaliados", JsonSerializer.Serialize(servico))
             };
 
             var tokernDescriptor = new SecurityTokenDescriptor

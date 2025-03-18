@@ -37,7 +37,7 @@ namespace TCC_Backend.Infrastructure.Repository.UsuarioRepositorys
             return new TokenDto
             {
                 Sussecs = resutlt,
-                AccessToken = await jwtTokenGenerator.Generate(newUser)
+                AccessToken = jwtTokenGenerator.Generate(newUser)
             };
         }
 

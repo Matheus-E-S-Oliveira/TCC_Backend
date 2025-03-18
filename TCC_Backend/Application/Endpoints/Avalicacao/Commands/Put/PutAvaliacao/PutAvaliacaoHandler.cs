@@ -18,7 +18,7 @@ namespace TCC_Backend.Application.Endpoints.Avalicacao.Commands.Put.PutAvaliacao
 
             var validade = await avaliacaoRepository.CheckAuth(request.Token, id);
             
-            if(validade.IsTokenValid)
+            if(validade.IsTokenValid == false)
                 return Error([validade.Menssage], StatusCodes.Status400BadRequest);
 
             var result =  await avaliacaoRepository.UpdateAvalicaoService(avaliacoes, request.Respostas);

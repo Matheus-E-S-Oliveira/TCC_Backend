@@ -2,10 +2,12 @@
 using TCC_Backend.Domain.Interfaces.IUsuarioServicoAvaliacaoRepositorys;
 using TCC_Backend.Domain.Models.UsuarioServicosAvaliacao;
 using TCC_Backend.Infrastructure.Context.AppDbContext;
+using TCC_Backend.Infrastructure.Interfaces.IUltimaAvalicaoPorServicos;
+using TCC_Backend.Infrastructure.Service.TokenServices;
 
 namespace TCC_Backend.Infrastructure.Repository.UsuarioServicoAvaliacaoRepositorys
 {
-    public class UsuarioServicoAvaliacaoRepository(TccBackendContext context) : IUsuarioServicoAvaliacaoRepository
+    public class UsuarioServicoAvaliacaoRepository(TccBackendContext context, IUltimaAvalicaoPorServico ultimaAvalicaoPorServico) : IUsuarioServicoAvaliacaoRepository
     {
         private async Task SalvarDataUltimaAvaliacaoPorServico(Guid idUser, Guid idService)
         {
@@ -35,6 +37,14 @@ namespace TCC_Backend.Infrastructure.Repository.UsuarioServicoAvaliacaoRepositor
             else {
                 await SalvarDataUltimaAvaliacaoPorServico(idUser, idService);
             }
+        }
+
+        public async Task<Dictionary<Guid, DateTime?>> ListUlitmaAvaliacaoUser(Guid id)
+        {
+
+            var servico = await ultimaAvalicaoPorServico.GetUltimaAvaliacaiServicoFromUser(id);
+
+            return servico;
         }
     }
 }

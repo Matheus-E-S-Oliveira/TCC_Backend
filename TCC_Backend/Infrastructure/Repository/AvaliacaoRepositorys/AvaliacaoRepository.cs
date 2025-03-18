@@ -99,7 +99,7 @@ namespace TCC_Backend.Infrastructure.Repository.AvaliacaoRepositorys
             return new TokenValidationDto
             {
                 IsTokenValid = await context.Usuarios.AnyAsync(x => x.Id == subGuid && x.Type == type.Type),
-                Menssage = "Você não tem permissão para registrar um administrador.",
+                Menssage = "Você não tem permissão para avaliar.",
                 Id = subGuid
             };
         }

@@ -1,12 +1,13 @@
-﻿using FluentValidation;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using TCC_Backend.Application.Dtos.TokenDtos;
 using TCC_Backend.Application.Endpoints.Auth.Commands.PostAuth;
 using TCC_Backend.Application.Endpoints.Auth.Commands.PostAuthAdm;
 using TCC_Backend.Domain.Interfaces.IAuthRepositorys;
 using TCC_Backend.Infrastructure.Context.AppDbContext;
+using TCC_Backend.Infrastructure.Interfaces.IUltimaAvalicaoPorServicos;
 using TCC_Backend.Infrastructure.Security.Cryptography.BCryptAlgorithms;
 using TCC_Backend.Infrastructure.Security.Tokens.Access;
+using TCC_Backend.Infrastructure.Service.TokenServices;
 using TCC_Backend.Infrastructure.Validators.Auth.Post.LoginAdm;
 using TCC_Backend.Infrastructure.Validators.Auth.Post.LoginUsers;
 
@@ -46,7 +47,7 @@ namespace TCC_Backend.Infrastructure.Repository.AuthRepositorys
             return new TokenDto
             {
                 Sussecs = 1,
-                AccessToken = await jwtTokenGenerator.Generate(userExist)
+                AccessToken = jwtTokenGenerator.Generate(userExist)
             };
         }
 
