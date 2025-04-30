@@ -48,9 +48,9 @@ namespace TCC_Backend.Infrastructure.Service.AtualizacaoHistoricoBackgroundServi
         private static TimeSpan GetDelayToEndOfMonth()
         {
             var now = DateTime.UtcNow;
-            var nextMonth = new DateTime(now.Year, now.Month, 1).AddMonths(1);
-            var endOfMonth = new DateTime(nextMonth.Year, nextMonth.Month, 1).AddDays(-1);
-            return endOfMonth - now;
+            var startOfNextMonth = new DateTime(now.Year, now.Month, 1).AddMonths(1);
+            var delay = startOfNextMonth - now;
+            return delay > TimeSpan.Zero ? delay : TimeSpan.FromMinutes(1);
         }
 
         private static DateTime GetUltimoDiaMesPassado()

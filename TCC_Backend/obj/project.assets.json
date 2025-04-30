@@ -2781,11 +2781,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\GitHub\\TCC\\TCC_Backend\\TCC_Backend\\TCC_Backend.csproj",
+      "projectUniqueName": "e:\\GitHub\\TCC\\TCC_Backend\\TCC_Backend\\TCC_Backend.csproj",
       "projectName": "TCC_Backend",
-      "projectPath": "E:\\GitHub\\TCC\\TCC_Backend\\TCC_Backend\\TCC_Backend.csproj",
+      "projectPath": "e:\\GitHub\\TCC\\TCC_Backend\\TCC_Backend\\TCC_Backend.csproj",
       "packagesPath": "C:\\Users\\marhe\\.nuget\\packages\\",
-      "outputPath": "E:\\GitHub\\TCC\\TCC_Backend\\TCC_Backend\\obj\\",
+      "outputPath": "e:\\GitHub\\TCC\\TCC_Backend\\TCC_Backend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2891,7 +2891,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
