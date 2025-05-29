@@ -23,7 +23,7 @@ namespace TCC_Backend.Infrastructure.Repository.PerguntasRepositorys
         {
             var perguntasExistentes = await GetPerguntasByServicoId(idServico);
 
-            if (perguntasExistentes.Count == 0) return 0;
+            if (perguntasExistentes.Count == 0) return await SavePergunta(idServico, perguntas);
 
             foreach (var pergunta in perguntasExistentes)
             {
