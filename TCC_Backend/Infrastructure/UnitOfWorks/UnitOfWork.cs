@@ -6,6 +6,8 @@ using TCC_Backend.Infrastructure.Context.AppDbContext;
 using TCC_Backend.Infrastructure.Repository.AvaliacaoRepositorys;
 using TCC_Backend.Infrastructure.Repository.HistoricoRepositorys;
 using TCC_Backend.Infrastructure.Repository.ServicoRepositorys;
+using TCC_Backend.Infrastructure.Validators.Servico.Post;
+using TCC_Backend.Infrastructure.Validators.Servico.Put;
 
 namespace TCC_Backend.Infrastructure.UnitOfWorks
 {
@@ -13,7 +15,9 @@ namespace TCC_Backend.Infrastructure.UnitOfWorks
                       IAvaliacaoRepository avaliacaoRepository,
                       IHistoricoRepository historicoRepository,
                       IServicoRepository servicoRepository,
-                      IServicoRepositoryDependency servicoRepositoryDependency) : IUnitOfWork
+                      IServicoRepositoryDependency servicoRepositoryDependency,
+                      ServicoValidator servicoValidator,
+                      ServicoPutValidator servicoPutValidator) : IUnitOfWork
     {
         private IAvaliacaoRepository? _avaliacaoRepository = avaliacaoRepository;
         private IHistoricoRepository? _historicoRepository = historicoRepository;
@@ -23,7 +27,7 @@ namespace TCC_Backend.Infrastructure.UnitOfWorks
 
         public IHistoricoRepository HistoricoRepository => _historicoRepository ??= new HistoricoRepository(context);
 
-        public IServicoRepository ServicoRepository => _servicoRepository ??= new ServicoRepository(context, _avaliacaoRepository!);
+        public IServicoRepository ServicoRepository => _servicoRepository ??= new ServicoRepository(context, _avaliacaoRepository!, servicoValidator, servicoPutValidator);
 
         public void Dispose()
         {

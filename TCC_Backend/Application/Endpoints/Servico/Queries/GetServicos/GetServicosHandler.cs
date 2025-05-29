@@ -20,7 +20,10 @@ namespace TCC_Backend.Application.Endpoints.Servico.Queries.GetServicos
                     Id = x.Id,
                     Nome = x.Nome,
                     Titulo = x.Titulo,
-                    NumeroDeAvaliacoes = x.NumeroDeAvalicoes,
+                    NumeroDeAvaliacoes = x.NumeroDeAvaliacoes,
+                    Localizacao = x.Localizacao,
+                    Imagem = x.Imagem,
+                    UrlSite = x.UrlSite ?? string.Empty
                 })
                 .ToListAsync();
 

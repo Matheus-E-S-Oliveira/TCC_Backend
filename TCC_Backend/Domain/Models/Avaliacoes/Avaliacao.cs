@@ -10,12 +10,11 @@ namespace TCC_Backend.Domain.Models.Avaliacoes
         {
         }
 
-        public Avaliacao(Guid idServico, CategoriaAvaliacao categoria, decimal nota, DateTime dataAvalicao)
+        public Avaliacao(Guid idServico, CategoriaAvaliacao categoria, decimal nota)
         {
             IdServico = idServico;
             Categoria = categoria;
             Nota = nota;
-            DataAvalicao = dataAvalicao;
         }
 
         public Guid IdServico { get; private set; }

@@ -5,6 +5,7 @@ using TCC_Backend.Domain.Models.Auditorias;
 using TCC_Backend.Domain.Models.Avaliacoes;
 using TCC_Backend.Domain.Models.Historicos;
 using TCC_Backend.Domain.Models.LastExecutions;
+using TCC_Backend.Domain.Models.Perguntas;
 using TCC_Backend.Domain.Models.Reports;
 using TCC_Backend.Domain.Models.SecaoEleitorais;
 using TCC_Backend.Domain.Models.Servicos;
@@ -14,6 +15,7 @@ using TCC_Backend.Infrastructure.Context.Configurations.AdmEntityConfigurations;
 using TCC_Backend.Infrastructure.Context.Configurations.AvaliacoesEntityConfigurations;
 using TCC_Backend.Infrastructure.Context.Configurations.HistoricoEntityConfigurations;
 using TCC_Backend.Infrastructure.Context.Configurations.LastExecutionEntityConfigurations;
+using TCC_Backend.Infrastructure.Context.Configurations.PerguntasEntityConfigurations;
 using TCC_Backend.Infrastructure.Context.Configurations.ReportEntityConfigurations;
 using TCC_Backend.Infrastructure.Context.Configurations.SecaoEleitoralEntityConfigurations;
 using TCC_Backend.Infrastructure.Context.Configurations.ServicoEntityConfigurations;
@@ -42,6 +44,8 @@ namespace TCC_Backend.Infrastructure.Context.AppDbContext
 
         public DbSet<Usuario> Usuarios { get; set; }
 
+        public DbSet<Pergunta> Perguntas { get; set; }
+
         public DbSet<UsuarioServicoAvaliacao> UsuarioServicoAvaliacoes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -55,6 +59,7 @@ namespace TCC_Backend.Infrastructure.Context.AppDbContext
             modelBuilder.ApplyConfiguration(new ReportEntityConfiguration());
             modelBuilder.ApplyConfiguration(new UsuarioEntityConfiguration());
             modelBuilder.ApplyConfiguration(new UsuarioServicoAvaliacaoEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new PerguntasEntityConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

@@ -20,6 +20,8 @@ namespace TCC_Backend.Domain.Interfaces.IAvaliacaoRespositorys
 
         Task<object> UpdateAvalicaoService(List<Avaliacao> avalicaoService, Dictionary<int, int> Respostas);
 
+        Task<int> CreateAvaliacaoByServico (Guid idServico);
+
 
     }
 }

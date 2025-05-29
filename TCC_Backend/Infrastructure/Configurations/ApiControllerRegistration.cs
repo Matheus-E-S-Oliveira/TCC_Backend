@@ -4,6 +4,8 @@ using TCC_Backend.Application.Endpoints.Auth.Commands.PostAuthAdm;
 using TCC_Backend.Application.Endpoints.Avalicacao.Commands.Put.PutAvaliacao;
 using TCC_Backend.Application.Endpoints.Avalicacao.Queries.GetAvaliacaoPorServico;
 using TCC_Backend.Application.Endpoints.Report.Commands.Post.PostReport;
+using TCC_Backend.Application.Endpoints.Servico.Commands.Post.PostServico;
+using TCC_Backend.Application.Endpoints.Servico.Commands.Put.PutServico;
 using TCC_Backend.Application.Endpoints.Servico.Queries.GetServicoPorId;
 using TCC_Backend.Application.Endpoints.Servico.Queries.GetServicos;
 using TCC_Backend.Application.Endpoints.Usuario.Commands.Post.RegisterUsuario;
@@ -22,6 +24,8 @@ namespace TCC_Backend.Infrastructure.Configurations
             services.AddScoped<PutAvaliacaoHandler>();
             services.AddScoped<PostAuthHandler>();
             services.AddScoped<PostAuthAdmHandler>();
+            services.AddScoped<PostServicoHandler>();
+            services.AddScoped<PutServicoHandler>();
             services.AddScoped<PostReportHandler>();
             services.AddScoped<RegisterUsuarioHandler>();
             services.AddScoped<UsuarioServicoAvaliacaoHandler>();

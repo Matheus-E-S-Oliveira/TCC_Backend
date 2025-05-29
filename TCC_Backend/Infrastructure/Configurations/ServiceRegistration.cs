@@ -9,6 +9,7 @@ using TCC_Backend.Domain.Interfaces.IAuthRepositorys;
 using TCC_Backend.Domain.Interfaces.IAvaliacaoRespositorys;
 using TCC_Backend.Domain.Interfaces.IHistorioRepositorys;
 using TCC_Backend.Domain.Interfaces.ILastExecutionDateRepositorys;
+using TCC_Backend.Domain.Interfaces.IPerguntasRepositorys;
 using TCC_Backend.Domain.Interfaces.IReportRepositorys;
 using TCC_Backend.Domain.Interfaces.ISerivicoRepositorys;
 using TCC_Backend.Domain.Interfaces.IUsuarioRepositorys;
@@ -20,6 +21,7 @@ using TCC_Backend.Infrastructure.Repository.AuthRepositorys;
 using TCC_Backend.Infrastructure.Repository.AvaliacaoRepositorys;
 using TCC_Backend.Infrastructure.Repository.HistoricoRepositorys;
 using TCC_Backend.Infrastructure.Repository.LastExecutionDateRepositorys;
+using TCC_Backend.Infrastructure.Repository.PerguntasRepositorys;
 using TCC_Backend.Infrastructure.Repository.ReportRepositorys;
 using TCC_Backend.Infrastructure.Repository.ServicoRepositorys;
 using TCC_Backend.Infrastructure.Repository.UsuarioRepositorys;
@@ -52,6 +54,7 @@ namespace TCC_Backend.Infrastructure.Configurations
             services.AddScoped<IUsuarioServicoAvaliacaoRepository, UsuarioServicoAvaliacaoRepository>();
             services.AddScoped<IUltimaAvalicaoPorServico, UltimaAvalicaoPorServico>();
             services.AddScoped<JwtTokenGenerator>();
+            services.AddScoped<IPerguntasRepository, PerguntasRepository>();
         }
     }
 }

@@ -87,7 +87,7 @@ namespace TCC_Backend.Infrastructure.Repository.AvaliacaoRepositorys
                 };
             }
 
-            if(await CheckUltimaAvalicaoPorServico(idServico, subGuid) == false)
+            if (await CheckUltimaAvalicaoPorServico(idServico, subGuid) == false)
             {
                 return new TokenValidationDto
                 {
@@ -146,7 +146,7 @@ namespace TCC_Backend.Infrastructure.Repository.AvaliacaoRepositorys
         public async Task ZerarAvaliacoesAsync(Guid id, DateTime dataReferencia)
         {
             var avaliacoesDoMes = context.Avaliacoes
-                                          .Where(a => (a.DataAvalicao.Month == dataReferencia.Month) 
+                                          .Where(a => (a.DataAvalicao.Month == dataReferencia.Month)
                                             && (a.DataAvalicao.Year == dataReferencia.Year)
                                             && (a.IdServico == id));
 
@@ -159,6 +159,20 @@ namespace TCC_Backend.Infrastructure.Repository.AvaliacaoRepositorys
             await servicoRepository.ZerarNumeroDeAvaliacoes(id);
 
             await context.SaveChangesAsync();
+        }
+
+        public async Task<int> CreateAvaliacaoByServico(Guid idServico)
+        {
+            decimal nota = 0.0m;
+
+            var avaliacoes = Enum.GetValues<CategoriaAvaliacao>()
+                                 .Cast<CategoriaAvaliacao>()
+                                 .Select(categoria => new Avaliacao(idServico, categoria, nota))
+                                 .ToList();
+
+            await context.Avaliacoes.AddRangeAsync(avaliacoes);
+
+            return await context.SaveChangesAsync();
         }
     }
 }

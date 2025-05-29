@@ -31,23 +31,37 @@ namespace TCC_Backend.Infrastructure.Context.Configurations.ServicoEntityConfigu
                 .HasMaxLength(150)
                 .IsRequired();
 
-            builder.Property(x => x.NumeroDeAvalicoes)
+            builder.Property(x => x.NumeroDeAvaliacoes)
                 .IsRequired();
+
+            builder.Property(x => x.UrlSite)
+                .IsRequired(false);
+
+            builder.Property(x => x.Imagem)
+                .HasColumnType("LongText");
+
+            builder.Property(x => x.Localizacao);
 
             builder.HasMany(x => x.Avaliacoes)
                 .WithOne(x => x.Servico)
                 .HasForeignKey(x => x.IdServico)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasMany(x => x.Historicos)
                 .WithOne(x => x.Servico)
                 .HasForeignKey(x => x.IdServico)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasMany(x => x.UsuarioServicoAvaliacoes)
                 .WithOne(x => x.Servico)
                 .HasForeignKey(x => x.ServicoId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasMany(x => x.Perguntas)
+                .WithOne(x => x.Servico)
+                .HasForeignKey(x => x.IdServico)
+                .OnDelete(DeleteBehavior.Cascade);
+
         }
     }
 }

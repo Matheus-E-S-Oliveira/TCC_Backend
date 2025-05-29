@@ -207,6 +207,37 @@ namespace TCC_Backend.Infrastructure.Migrations
                     b.ToTable("last_execution", (string)null);
                 });
 
+            modelBuilder.Entity("TCC_Backend.Domain.Models.Perguntas.Pergunta", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime?>("DataAtualizacao")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime(6)")
+                        .HasDefaultValueSql("CURRENT_TIMESTAMP(6)");
+
+                    b.Property<Guid>("IdServico")
+                        .HasColumnType("char(36)");
+
+                    b.Property<int>("Numero")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Question")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdServico");
+
+                    b.ToTable("perguntas", (string)null);
+                });
+
             modelBuilder.Entity("TCC_Backend.Domain.Models.Reports.Report", b =>
                 {
                     b.Property<Guid>("Id")
@@ -306,18 +337,29 @@ namespace TCC_Backend.Infrastructure.Migrations
                         .HasColumnType("datetime(6)")
                         .HasDefaultValueSql("CURRENT_TIMESTAMP(6)");
 
+                    b.Property<string>("Imagem")
+                        .IsRequired()
+                        .HasColumnType("LongText");
+
+                    b.Property<string>("Localizacao")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
 
-                    b.Property<int>("NumeroDeAvalicoes")
+                    b.Property<int>("NumeroDeAvaliacoes")
                         .HasColumnType("int");
 
                     b.Property<string>("Titulo")
                         .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("varchar(150)");
+
+                    b.Property<string>("UrlSite")
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
@@ -426,7 +468,7 @@ namespace TCC_Backend.Infrastructure.Migrations
                     b.HasOne("TCC_Backend.Domain.Models.Servicos.Servico", "Servico")
                         .WithMany("Avaliacoes")
                         .HasForeignKey("IdServico")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Servico");
@@ -437,7 +479,18 @@ namespace TCC_Backend.Infrastructure.Migrations
                     b.HasOne("TCC_Backend.Domain.Models.Servicos.Servico", "Servico")
                         .WithMany("Historicos")
                         .HasForeignKey("IdServico")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Servico");
+                });
+
+            modelBuilder.Entity("TCC_Backend.Domain.Models.Perguntas.Pergunta", b =>
+                {
+                    b.HasOne("TCC_Backend.Domain.Models.Servicos.Servico", "Servico")
+                        .WithMany("Perguntas")
+                        .HasForeignKey("IdServico")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Servico");
@@ -448,7 +501,7 @@ namespace TCC_Backend.Infrastructure.Migrations
                     b.HasOne("TCC_Backend.Domain.Models.Servicos.Servico", "Servico")
                         .WithMany("UsuarioServicoAvaliacoes")
                         .HasForeignKey("ServicoId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("TCC_Backend.Domain.Models.Usuarios.Usuario", "Usuario")
@@ -467,6 +520,8 @@ namespace TCC_Backend.Infrastructure.Migrations
                     b.Navigation("Avaliacoes");
 
                     b.Navigation("Historicos");
+
+                    b.Navigation("Perguntas");
 
                     b.Navigation("UsuarioServicoAvaliacoes");
                 });
