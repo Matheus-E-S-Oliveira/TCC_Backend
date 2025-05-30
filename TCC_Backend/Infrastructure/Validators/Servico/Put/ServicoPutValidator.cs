@@ -38,8 +38,8 @@ namespace TCC_Backend.Infrastructure.Validators.Servico.Put
                         var host = uri.Host.ToLower();
                         var path = uri.AbsolutePath.ToLower();
 
-                        return (host.Contains("google.") || host.Contains("goo.gl") || host.Contains("maps.app"))
-                               && path.Contains("/maps");
+                         return host.Contains("google.") || host.Contains("goo.gl") || host.Contains("maps.app");
+    
                     })
                     .WithMessage("A URL de localização deve ser um link válido do Google Maps.");
             });

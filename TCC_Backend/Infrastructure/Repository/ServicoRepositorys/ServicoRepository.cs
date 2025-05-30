@@ -133,7 +133,15 @@ namespace TCC_Backend.Infrastructure.Repository.ServicoRepositorys
                 imagem: request.Imagem,
                 site: request.UrlSite);
 
-            return await context.SaveChangesAsync();
+            try
+            {
+                await context.SaveChangesAsync();
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
         }
 
         private async Task<Servico?> GetServicoById(Guid id)

@@ -6,25 +6,6 @@
   },
   "paths": {
     "/api/v1/adm": {
-      "get": {
-        "tags": [
-          "Adm"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "query",
-            "schema": {
-              "$ref": "#/components/schemas/GetServicosRequest"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
       "post": {
         "tags": [
           "Adm"
@@ -48,90 +29,6 @@
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/v1/adm/{id}": {
-      "get": {
-        "tags": [
-          "Adm"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Adm"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PutAvaliacaoRequest"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PutAvaliacaoRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PutAvaliacaoRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Adm"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -140,25 +37,6 @@
       }
     },
     "/api/v1/auth": {
-      "get": {
-        "tags": [
-          "Auth"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "query",
-            "schema": {
-              "$ref": "#/components/schemas/GetServicosRequest"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
       "post": {
         "tags": [
           "Auth"
@@ -182,90 +60,6 @@
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/v1/auth/{id}": {
-      "get": {
-        "tags": [
-          "Auth"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Auth"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PutAvaliacaoRequest"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PutAvaliacaoRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PutAvaliacaoRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Auth"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -293,56 +87,6 @@
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/PostAuthAdmRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/v1/avaliacao": {
-      "get": {
-        "tags": [
-          "Avaliacao"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "query",
-            "schema": {
-              "$ref": "#/components/schemas/GetServicosRequest"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Avaliacao"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetServicosRequest"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetServicosRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetServicosRequest"
               }
             }
           }
@@ -432,10 +176,12 @@
             }
           }
         }
-      },
-      "delete": {
+      }
+    },
+    "/api/v1/pergunta/{id}": {
+      "get": {
         "tags": [
-          "Avaliacao"
+          "Pergunta"
         ],
         "parameters": [
           {
@@ -456,25 +202,6 @@
       }
     },
     "/api/v1/report": {
-      "get": {
-        "tags": [
-          "Report"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "query",
-            "schema": {
-              "$ref": "#/components/schemas/GetServicosRequest"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
       "post": {
         "tags": [
           "Report"
@@ -498,90 +225,6 @@
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/v1/report/{id}": {
-      "get": {
-        "tags": [
-          "Report"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Report"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PutAvaliacaoRequest"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PutAvaliacaoRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PutAvaliacaoRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Report"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -617,17 +260,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetServicosRequest"
+                "$ref": "#/components/schemas/PostServicoRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetServicosRequest"
+                "$ref": "#/components/schemas/PostServicoRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetServicosRequest"
+                "$ref": "#/components/schemas/PostServicoRequest"
               }
             }
           }
@@ -680,17 +323,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetServicosRequest"
+                "$ref": "#/components/schemas/PutServicoRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetServicosRequest"
+                "$ref": "#/components/schemas/PutServicoRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetServicosRequest"
+                "$ref": "#/components/schemas/PutServicoRequest"
               }
             }
           }
@@ -724,162 +367,9 @@
       }
     },
     "/api/v1/usuario": {
-      "get": {
-        "tags": [
-          "Usuario"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "query",
-            "schema": {
-              "$ref": "#/components/schemas/GetServicosRequest"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
       "post": {
         "tags": [
           "Usuario"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegisterUsuarioRequest"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegisterUsuarioRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegisterUsuarioRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/v1/usuario/{id}": {
-      "get": {
-        "tags": [
-          "Usuario"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Usuario"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetServicosRequest"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetServicosRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetServicosRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Usuario"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/v1/usuarioservicoavaliacao": {
-      "get": {
-        "tags": [
-          "UsuarioServicoAvaliacao"
-        ],
-        "parameters": [
-          {
-            "name": "request",
-            "in": "query",
-            "schema": {
-              "$ref": "#/components/schemas/GetServicosRequest"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "UsuarioServicoAvaliacao"
         ],
         "requestBody": {
           "content": {
@@ -928,67 +418,6 @@
             "description": "OK"
           }
         }
-      },
-      "put": {
-        "tags": [
-          "UsuarioServicoAvaliacao"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetServicosRequest"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetServicosRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetServicosRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "UsuarioServicoAvaliacao"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
       }
     }
   },
@@ -996,6 +425,25 @@
     "schemas": {
       "GetServicosRequest": {
         "type": "object",
+        "additionalProperties": false
+      },
+      "PerguntaDto": {
+        "type": "object",
+        "properties": {
+          "numero": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "question": {
+            "type": "string",
+            "nullable": true
+          },
+          "idPergunta": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
         "additionalProperties": false
       },
       "PostAdmRequest": {
@@ -1081,6 +529,39 @@
         },
         "additionalProperties": false
       },
+      "PostServicoRequest": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "titulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "localizacao": {
+            "type": "string",
+            "nullable": true
+          },
+          "imagem": {
+            "type": "string",
+            "nullable": true
+          },
+          "urlSite": {
+            "type": "string",
+            "nullable": true
+          },
+          "perguntas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PerguntaDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "PutAvaliacaoRequest": {
         "type": "object",
         "properties": {
@@ -1097,6 +578,39 @@
             "additionalProperties": {
               "type": "integer",
               "format": "int32"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PutServicoRequest": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "titulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "localizacao": {
+            "type": "string",
+            "nullable": true
+          },
+          "imagem": {
+            "type": "string",
+            "nullable": true
+          },
+          "urlSite": {
+            "type": "string",
+            "nullable": true
+          },
+          "perguntas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PerguntaDto"
             },
             "nullable": true
           }

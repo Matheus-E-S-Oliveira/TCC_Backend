@@ -8,9 +8,7 @@ namespace TCC_Backend.Application.Endpoints.Servico.Queries.GetServicoPorId
     {
         public async Task<IActionResult> Handle(GetServicoPorIdRequest request)
         {
-            var result = await context.Servicos
-                    .Where(x => x.Id == request.Id)
-                    .FirstOrDefaultAsync();
+            var result = await context.Servicos.FirstOrDefaultAsync(x => x.Id == request.Id);
 
             if (result == null)
             {

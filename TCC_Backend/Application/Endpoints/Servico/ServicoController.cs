@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TCC_Backend.Application.Endpoints.Servico.Commands.Delete;
 using TCC_Backend.Application.Endpoints.Servico.Commands.Post.PostServico;
 using TCC_Backend.Application.Endpoints.Servico.Commands.Put.PutServico;
 using TCC_Backend.Application.Endpoints.Servico.Queries.GetServicoPorId;
@@ -36,7 +37,7 @@ namespace TCC_Backend.Application.Endpoints.Servico
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
-            return await Delete<GetServicosRequest, GetServicosHandler>(id);
+            return await Delete<DeleteServicoRequest, DeleteServicoHandler>(id);
         }
     }
 

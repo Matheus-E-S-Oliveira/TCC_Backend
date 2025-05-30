@@ -38,7 +38,15 @@ namespace TCC_Backend.Infrastructure.Repository.PerguntasRepositorys
                 }
             }
 
-            return await context.SaveChangesAsync();
+            try
+            {
+                await context.SaveChangesAsync();
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
         }
 
         private async Task<List<Pergunta>> GetPerguntasByServicoId(Guid idServico)

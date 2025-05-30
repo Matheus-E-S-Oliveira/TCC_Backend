@@ -20,7 +20,7 @@ namespace TCC_Backend.Application.Endpoints.Servico.Commands.Put.PutServico
         public string Imagem { get; set; } = string.Empty;
 
         [JsonPropertyName("urlSite")]
-        public string UrlSite { get; set; } = string.Empty;
+        public string? UrlSite { get; set; } = string.Empty;
 
         [JsonPropertyName("perguntas")]
         public List<PerguntaDto> Perguntas { get; set; } = [];
