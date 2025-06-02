@@ -10,10 +10,6 @@ namespace TCC_Backend.Application.Endpoints.Servico.Queries.GetServicos
     {
         public async Task<IActionResult> Handle(GetServicosRequest request)
         {
-            if (request == null)
-            {
-            }
-
             var result = await context.Servicos
                 .Select(x => new ServicoAvaliacaoDto
                 {

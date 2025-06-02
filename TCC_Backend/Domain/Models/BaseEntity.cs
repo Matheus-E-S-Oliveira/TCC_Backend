@@ -8,10 +8,8 @@ namespace TCC_Backend.Domain.Models
     {
         public Guid Id { get; protected set; }
 
-        [JsonIgnore]
         public DateTime DataCriacao { get; private set; }
 
-        [JsonIgnore]
         public DateTime? DataAtualizacao { get; private set; }
 
         public virtual void AtualizarDataDeEstados(EntityState entityState)

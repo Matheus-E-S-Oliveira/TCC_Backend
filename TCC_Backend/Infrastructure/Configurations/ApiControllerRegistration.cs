@@ -1,10 +1,13 @@
-﻿using TCC_Backend.Application.Endpoints.Adm.Commands.Post;
+﻿using TCC_Backend.Application.Endpoints.Adm.Commands.Delete;
+using TCC_Backend.Application.Endpoints.Adm.Commands.Post;
+using TCC_Backend.Application.Endpoints.Adm.Queries;
 using TCC_Backend.Application.Endpoints.Auth.Commands.PostAuth;
 using TCC_Backend.Application.Endpoints.Auth.Commands.PostAuthAdm;
 using TCC_Backend.Application.Endpoints.Avalicacao.Commands.Put.PutAvaliacao;
 using TCC_Backend.Application.Endpoints.Avalicacao.Queries.GetAvaliacaoPorServico;
 using TCC_Backend.Application.Endpoints.Pergunta.Queries.GetPerguntasByServico;
 using TCC_Backend.Application.Endpoints.Report.Commands.Post.PostReport;
+using TCC_Backend.Application.Endpoints.Report.Queries.GetReports;
 using TCC_Backend.Application.Endpoints.Servico.Commands.Delete;
 using TCC_Backend.Application.Endpoints.Servico.Commands.Post.PostServico;
 using TCC_Backend.Application.Endpoints.Servico.Commands.Put.PutServico;
@@ -33,6 +36,9 @@ namespace TCC_Backend.Infrastructure.Configurations
             services.AddScoped<UsuarioServicoAvaliacaoHandler>();
             services.AddScoped<GetPerguntasByServicoHandler>();
             services.AddScoped<DeleteServicoHandler>();
+            services.AddScoped<GetAdmsHandler>();
+            services.AddScoped<DeleteAdmHandler>();
+            services.AddScoped<GetReportHandler>();
         }
     }
 }
