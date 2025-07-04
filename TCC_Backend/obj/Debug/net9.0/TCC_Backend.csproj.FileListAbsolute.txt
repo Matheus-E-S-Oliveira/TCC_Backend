@@ -157,12 +157,6 @@ E:\GitHub\TCC\TCC_Backend\TCC_Backend\obj\Debug\net9.0\compressed\lngqlm1bji-mlv
 E:\GitHub\TCC\TCC_Backend\TCC_Backend\obj\Debug\net9.0\staticwebassets.build.json
 E:\GitHub\TCC\TCC_Backend\TCC_Backend\obj\Debug\net9.0\staticwebassets.development.json
 E:\GitHub\TCC\TCC_Backend\TCC_Backend\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-E:\GitHub\TCC\TCC_Backend\TCC_Backend\obj\Debug\net9.0\staticwebassets\msbuild.TCC_Backend.Microsoft.AspNetCore.StaticWebAssets.props
-E:\GitHub\TCC\TCC_Backend\TCC_Backend\obj\Debug\net9.0\staticwebassets\msbuild.TCC_Backend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-E:\GitHub\TCC\TCC_Backend\TCC_Backend\obj\Debug\net9.0\staticwebassets\msbuild.build.TCC_Backend.props
-E:\GitHub\TCC\TCC_Backend\TCC_Backend\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.TCC_Backend.props
-E:\GitHub\TCC\TCC_Backend\TCC_Backend\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.TCC_Backend.props
-E:\GitHub\TCC\TCC_Backend\TCC_Backend\obj\Debug\net9.0\staticwebassets.pack.json
 E:\GitHub\TCC\TCC_Backend\TCC_Backend\obj\Debug\net9.0\TCC_Back.B585DA87.Up2Date
 E:\GitHub\TCC\TCC_Backend\TCC_Backend\obj\Debug\net9.0\TCC_Backend.dll
 E:\GitHub\TCC\TCC_Backend\TCC_Backend\obj\Debug\net9.0\refint\TCC_Backend.dll
@@ -181,3 +175,8 @@ E:\GitHub\TCC\TCC_Backend\TCC_Backend\bin\Debug\net9.0\System.IdentityModel.Toke
 E:\GitHub\TCC\TCC_Backend\TCC_Backend\bin\Debug\net9.0\FluentValidation.dll
 E:\GitHub\TCC\TCC_Backend\TCC_Backend\bin\Debug\net9.0\FluentValidation.AspNetCore.dll
 E:\GitHub\TCC\TCC_Backend\TCC_Backend\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll
+E:\GitHub\TCC\TCC_Backend\TCC_Backend\obj\Debug\net9.0\rpswa.dswa.cache.json
+E:\GitHub\TCC\TCC_Backend\TCC_Backend\obj\Debug\net9.0\rjimswa.dswa.cache.json
+E:\GitHub\TCC\TCC_Backend\TCC_Backend\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+E:\GitHub\TCC\TCC_Backend\TCC_Backend\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+E:\GitHub\TCC\TCC_Backend\TCC_Backend\obj\Debug\net9.0\staticwebassets.build.json.cache
